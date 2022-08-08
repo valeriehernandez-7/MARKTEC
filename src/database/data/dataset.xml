@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Datos>
+    <Usuarios>
+        <Usuario Nombre="_vmind" Password="2020010829"/>
+        <Usuario Nombre="efmz200" Password="2018146983"/>
+        <Usuario Nombre="AVindas" Password="now1234*"/>
+        <Usuario Nombre="gruiz" Password="shop56975"/>
+        <Usuario Nombre="jaguero" Password="45pow56"/>
+        <Usuario Nombre="JRamirez" Password="C454gr1"/>
+        <Usuario Nombre="lCamacho" Password="LPerez1"/>
+        <Usuario Nombre="LPerez" Password="MyPass123*"/>
+        <Usuario Nombre="ralvarez" Password="MyPass123*"/>
+        <Usuario Nombre="ulljose" Password="ted5454"/>
+        <Usuario Nombre="vmata" Password="159797530a"/>
+    </Usuarios>
+    <ClasesdeArticulos>
+        <ClaseArticulo Nombre="AA">
+        <ClaseArticulo Nombre="BB">
+        <ClaseArticulo Nombre="CC">
+    </ClasesdeArticulos>
+    <Articulos>
+        <Articulo Nombre="Aceite semi sintetico para motor de herramientas electricas 100 ml" ClasedeArticulo="BB" Precio="2192.00"/>
+        <Articulo Nombre="Adaptador 3/8 pulgada a 1/2 pulgada" ClasedeArticulo="AA" Precio="3575.00"/>
+        <Articulo Nombre="Aireador para fregadero" ClasedeArticulo="BB" Precio="1875.00"/>
+        <Articulo Nombre="Aldaba para porton 6 pulgadas" ClasedeArticulo="AA" Precio="3125.00"/>
+        <Articulo Nombre="Alicate aislado de puntas de 6-1/2 pulgadas" ClasedeArticulo="CC" Precio="14375.10"/>
+    </Articulos>
+</Datos>

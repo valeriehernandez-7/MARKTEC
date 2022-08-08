@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- configuration -->
+	<title>MARKTEC</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/png" href="img/ico/favicon.ico"/>
+	<!-- styles -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/animate/animate.css">
+	<link rel="stylesheet" type="text/css" href="css/css-hamburgers/hamburgers.min.css">
+	<link rel="stylesheet" type="text/css" href="css/animsition/css/animsition.min.css">
+	<link rel="stylesheet" type="text/css" href="css/select2/select2.min.css">
+	<link rel="stylesheet" type="text/css" href="css/daterangepicker/daterangepicker.css">
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+	<!-- navbar -->
+	<div class="m-4">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<div class="container-fluid">
+				<a href="https://github.com/valeriehernandez-7/MARKTEC" target="_blank" class="navbar-brand">
+					<img src="img/logo/logo.png" height="28" alt="MARKTEC">
+					<b style="color: #e2273a">MARKTEC</b>
+				</a>
+				<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarCollapse">
+					<div class="navbar-nav ms-auto">
+						<a href="index.html" class="nav-item nav-link" ><b>LOG OUT</b></a>
+					</div>
+				</div>
+			</div>
+		</nav>
+	</div>
+	<!-- item manager -->
+	<div class="container mb-3 mt-3">
+		<table class="table table-striped ItemsTable" style="width:100%">
+			<thead>
+				<tr>
+					<th align="center">NAME</th>
+					<th align="center">PRICE</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Hammer Nixon</td>
+					<td>$320,800</td>
+				</tr>
+				<tr>
+					<td>Drill Winters</td>
+					<td>$170,750</td>
+				</tr>
+				<tr>
+					<td>Screwdriver Cox</td>
+					<td>$86,000</td>
+				</tr>
+				<tr>
+					<td>Hammer Nixon</td>
+					<td>$320,800</td>
+				</tr>
+				<tr>
+					<td>Drill Winters</td>
+					<td>$170,750</td>
+				</tr>
+				<tr>
+					<td>Screwdriver Cox</td>
+					<td>$86,000</td>
+				</tr>
+				<tr>
+					<td>Hammer Nixon</td>
+					<td>$320,800</td>
+				</tr>
+				<tr>
+					<td>Drill Winters</td>
+					<td>$170,750</td>
+				</tr>
+				<tr>
+					<td>Screwdriver Cox</td>
+					<td>$86,000</td>
+				</tr>
+				<tr>
+					<td>Hammer Nixon</td>
+					<td>$320,800</td>
+				</tr>
+				<tr>
+					<td>Drill Winters</td>
+					<td>$170,750</td>
+				</tr>
+				<tr>
+					<td>Screwdriver Cox</td>
+					<td>$86,000</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<!-- add item button -->
+	<div class="container mb-3 mt-3">
+		<button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#itemModal">
+			<img src="img/buttons/add.png" width="50" />
+		</button>
+	</div>
+	<!-- add item modal -->
+	<div class="modal fade" id="itemModal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="itemModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header border-bottom-0">
+					<h5 class="modal-title" id="itemModalTitle"><b style="color: #e2273a">NEW ITEM</b></h5>
+				</div>
+				<form>
+					<div class="modal-body">
+						<!-- item name form -->
+						<div class="form-group" align="center">
+							<img src="img/buttons/new-product.png" width="50" />
+							<input type="text" id="nameForm" class="form-control validate" required="required" placeholder="DESCRIPTION">
+							<label data-error="wrong" data-success="right" for="nameForm"></label>
+						</div>
+						<!-- item price form -->
+						<div class="form-group"  align="center">
+							<img src="img/buttons/dollar.png" width="50" />
+							<input type="number" id="priceForm" class="form-control validate" min="0" max="100000000000000.0000" step="0.0001" required="required" placeholder="PRICE">
+							<label data-error="wrong" data-success="right" for="priceForm"></label>
+						</div>
+					</div>
+					<!-- submit or discard form data -->
+					<div class="modal-footer border-top-0 d-flex justify-content-center">
+						<button id="discardBtn" type="reset" class="btn btn-ligh" data-dismiss="modal" onclick="document.getElementById('nameForm').value = '', document.getElementById('priceForm').value = ''">
+							<img src="img/buttons/discard.png" width="25"/>
+						</button>
+						<button id="submitBtn" type="submit" class="btn btn-light">
+							<img src="img/buttons/accept.png" width="25"/>
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<!-- scripts -->
+	<script>
+	</script>
+	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+	<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+	<script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
+	<script src="js/datatables/setup.js"></script>
+	<script src="js/animsition/js/animsition.min.js"></script>
+	<script src="js/bootstrap/js/popper.js"></script>
+	<script src="js/bootstrap/js/bootstrap.min.js"></script>
+	<script src="js/select2/select2.min.js"></script>
+	<script src="js/daterangepicker/moment.min.js"></script>
+	<script src="js/daterangepicker/daterangepicker.js"></script>
+	<script src="js/countdowntime/countdowntime.js"></script>
+	<script src="js/main.js"></script>
+	<footer class="m-4">
+		<!-- Copyright -->
+		<div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+			© 2022 Copyright:
+			<b class="text-reset fw-bold" href="https://github.com/valeriehernandez-7">Valerie M. Hernández Fernández</b>
+		</div>
+	</footer>
+	</html>
