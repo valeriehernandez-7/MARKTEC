@@ -3,17 +3,17 @@ USE [MARKTEC]
 GO
 
 /* PROC DESCRIPTION */
-CREATE OR ALTER PROCEDURE [SP_NameFilter]
+CREATE OR ALTER PROCEDURE [SP_ItemAmountFilter]
 	/* SP Parameters */
-	@inDescription NVARCHAR(128),
+	@inAmount INT,
 	@outResultCode INT OUTPUT
 AS
 BEGIN
 	SET NOCOUNT ON;
 	BEGIN TRY
 		SET @outResultCode = 0; /* Unassigned code */
-		BEGIN TRANSACTION [SelectItems]
-			IF (@inDescription IS NULL OR @inDescription = '')
+		BEGIN TRANSACTION [SelectTopItems]
+			IF (@inAmount IS NULL OR @inAmount = 0)
 				BEGIN
 					SELECT
 						[I].[ID],
@@ -25,21 +25,21 @@ BEGIN
 				END;
 			ELSE
 				BEGIN
-					SELECT
+					SELECT TOP (@inAmount)
 						[I].[ID],
 						(SELECT [IC].[Name] FROM [dbo].[ItemCategory] AS [IC] WHERE [IC].[ID] = [I].[IDItemCategory]),
 						[I].[Description],
 						[I].[Price]
 					FROM [dbo].[Item] AS [I]
-					WHERE [I].[Description] LIKE '%'+ @inDescription + '%';
+					ORDER BY [I].[Description];
 				END;
 			SET @outResultCode = 5200; /* OK */
-		COMMIT TRANSACTION [SelectItems]	
+		COMMIT TRANSACTION [SelectTopItems]	
 	END TRY
 	BEGIN CATCH
 		IF @@TRANCOUNT > 0
 			BEGIN
-				ROLLBACK TRANSACTION [SelectItems]
+				ROLLBACK TRANSACTION [SelectTopItems]
 			END;
 		IF OBJECT_ID(N'dbo.ErrorLog', N'U') IS NOT NULL /* Check Error table existence */
 			BEGIN
