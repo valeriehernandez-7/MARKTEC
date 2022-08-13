@@ -11,6 +11,8 @@ AS
 BEGIN
 	SET NOCOUNT ON;
 	BEGIN TRY
+		SET @outResultCode = 0; /* OK */
+
 		DECLARE
 			@hdoc INT,
 			@Data XML,
@@ -82,7 +84,6 @@ BEGIN
 		EXECUTE SP_XML_REMOVEDOCUMENT @hdoc; -- release the memory used from xml doc
 
 		BEGIN TRANSACTION [InsertData]
-			
 			INSERT INTO [dbo].[User] ( /* Transfer data from TMPUser table to dbo.User */
 				[Username],
 				[Password]
@@ -102,13 +103,13 @@ BEGIN
 				[Description],
 				[Price]
 			) SELECT
-				(SELECT IC.ID FROM [dbo].[ItemCategory] AS IC WHERE IC.Name = NewI.I_ItemCategory),
+				(SELECT [IC].[ID] FROM [dbo].[ItemCategory] AS [IC] WHERE [IC].[Name] = [NewI].[I_ItemCategory]),
 				[NewI].[I_Description],
 				[NewI].[I_Price]
 			FROM @TMPItem AS [NewI];
 
+			SET @outResultCode = 5200; /* OK */
 		COMMIT TRANSACTION [InsertData]
-		SET @outResultCode = 0; /* OK */
 	END TRY
 	BEGIN CATCH
 		IF @@TRANCOUNT > 0

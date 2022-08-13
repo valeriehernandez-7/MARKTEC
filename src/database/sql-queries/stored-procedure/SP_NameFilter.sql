@@ -3,25 +3,43 @@ USE [MARKTEC]
 GO
 
 /* PROC DESCRIPTION */
-CREATE OR ALTER PROCEDURE [SP_Name]
+CREATE OR ALTER PROCEDURE [SP_NameFilter]
 	/* SP Parameters */
-	-- @inVariable TYPE,
+	@inDescription NVARCHAR(128),
 	@outResultCode INT OUTPUT
 AS
 BEGIN
 	SET NOCOUNT ON;
 	BEGIN TRY
 		SET @outResultCode = 0; /* Unassigned code */
-		/* TRY LINES */
-		BEGIN TRANSACTION [transactionName]
-			/* TRANSACTION LINES */
+		BEGIN TRANSACTION [SelectItems]
+			IF (@inDescription IS NULL OR @inDescription = '')
+				BEGIN
+					SELECT
+						[I].[ID],
+						(SELECT [IC].[Name] FROM [dbo].[ItemCategory] AS [IC] WHERE [IC].[ID] = [I].[IDItemCategory]),
+						[I].[Description],
+						[I].[Price]
+					FROM [dbo].[Item] AS [I]
+					ORDER BY [I].[Description];
+				END;
+			ELSE
+				BEGIN
+					SELECT
+						[I].[ID],
+						(SELECT [IC].[Name] FROM [dbo].[ItemCategory] AS [IC] WHERE [IC].[ID] = [I].[IDItemCategory]),
+						[I].[Description],
+						[I].[Price]
+					FROM [dbo].[Item] AS [I]
+					WHERE [I].[Description] LIKE '%'+ @inDescription + '%';
+				END;
 			SET @outResultCode = 5200; /* OK */
-		COMMIT TRANSACTION [transactionName]
+		COMMIT TRANSACTION [SelectItems]	
 	END TRY
 	BEGIN CATCH
 		IF @@TRANCOUNT > 0
 			BEGIN
-				ROLLBACK TRANSACTION [transactionName]
+				ROLLBACK TRANSACTION [SelectItems]
 			END;
 		IF OBJECT_ID(N'dbo.ErrorLog', N'U') IS NOT NULL /* Check Error table existence */
 			BEGIN
