@@ -5,7 +5,7 @@ GO
 /* PROC DESCRIPTION */
 CREATE OR ALTER PROCEDURE [SP_LoadDataset]
 	/* SP Parameters */
-	@inXMLPath NVARCHAR(MAX) = 'C:\Users\vmind\Documents\GitHub\MARKTEC\src\server\database\data\dataset.xml',
+	@inXMLPath NVARCHAR(MAX) = 'C:\Users\vmind\Documents\GitHub\MARKTEC\src\database\data\dataset.xml',
 	@outResultCode INT OUTPUT
 AS
 BEGIN
@@ -32,12 +32,12 @@ BEGIN
 			[U_Username],
 			[U_Password]
 		) SELECT
-			[Usuario],
+			[Nombre],
 			[Password]
 		FROM OPENXML (
 			@hdoc, 'Datos/Usuarios/Usuario'
 		) WITH (
-			[Usuario] NVARCHAR(32),
+			[Nombre] NVARCHAR(32),
 			[Password] NVARCHAR(32)
 		) AS [NewU];
 
@@ -113,7 +113,7 @@ BEGIN
 	BEGIN CATCH
 		IF @@TRANCOUNT > 0
 			BEGIN
-				ROLLBACK TRANSACTION [transactionName]
+				ROLLBACK TRANSACTION [InsertData]
 			END;
 		IF OBJECT_ID(N'dbo.ErrorLog', N'U') IS NOT NULL /* Check Error table existence */
 			BEGIN

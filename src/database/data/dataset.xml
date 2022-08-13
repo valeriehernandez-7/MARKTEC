@@ -14,9 +14,9 @@
         <Usuario Nombre="vmata" Password="159797530a"/>
     </Usuarios>
     <ClasesdeArticulos>
-        <ClaseArticulo Nombre="AA">
-        <ClaseArticulo Nombre="BB">
-        <ClaseArticulo Nombre="CC">
+        <ClaseArticulo Nombre="AA"/>
+        <ClaseArticulo Nombre="BB"/>
+        <ClaseArticulo Nombre="CC"/>
     </ClasesdeArticulos>
     <Articulos>
         <Articulo Nombre="Aceite semi sintetico para motor de herramientas electricas 100 ml" ClasedeArticulo="BB" Precio="2192.00"/>

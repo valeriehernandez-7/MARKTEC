@@ -22,25 +22,25 @@ GO
 
 /*Deletes data from ErrorLog table and restart the Id counter */
 DELETE FROM [dbo].[ErrorLog];
-DBCC CHECKIDENT ('[dbo].[ErrorLog]', RESEED, 0);
+DBCC CHECKIDENT ('[dbo].[ErrorLog]', RESEED, 0) WITH NO_INFOMSGS;
 GO
 /*Deletes data from EventLog table and restart the Id counter */
 DELETE FROM [dbo].[EventLog];
-DBCC CHECKIDENT ('[dbo].[EventLog]', RESEED, 0);
+DBCC CHECKIDENT ('[dbo].[EventLog]', RESEED, 0) WITH NO_INFOMSGS;
 GO
 /*Deletes data from EventType table and restart the Id counter */
 DELETE FROM [dbo].[EventType];
-DBCC CHECKIDENT ('[dbo].[EventType]', RESEED, 0);
+DBCC CHECKIDENT ('[dbo].[EventType]', RESEED, 0) WITH NO_INFOMSGS;
 GO
 /*Deletes data from Item table and restart the Id counter */
 DELETE FROM [dbo].[Item];
-DBCC CHECKIDENT ('[dbo].[Item]', RESEED, 0);
+DBCC CHECKIDENT ('[dbo].[Item]', RESEED, 0) WITH NO_INFOMSGS;
 GO
 /*Deletes data from ItemCategory table and restart the Id counter */
 DELETE FROM [dbo].[ItemCategory];
-DBCC CHECKIDENT ('[dbo].[ItemCategory]', RESEED, 0);
+DBCC CHECKIDENT ('[dbo].[ItemCategory]', RESEED, 0) WITH NO_INFOMSGS;
 GO
 /*Deletes data from User table and restart the Id counter */
 DELETE FROM [dbo].[User];
-DBCC CHECKIDENT ('[dbo].[User]', RESEED, 0);
+DBCC CHECKIDENT ('[dbo].[User]', RESEED, 0) WITH NO_INFOMSGS;
 GO
