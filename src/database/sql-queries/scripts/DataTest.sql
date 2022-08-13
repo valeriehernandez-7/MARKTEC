@@ -13,8 +13,8 @@ GO
 /* Display data from Item table */
 SELECT * FROM [dbo].[Item];
 GO
-/* Display data from ItemType table */
-SELECT * FROM [dbo].[ItemType];
+/* Display data from ItemCategory table */
+SELECT * FROM [dbo].[ItemCategory];
 GO
 /* Display data from User table */
 SELECT * FROM [dbo].[User];
