@@ -3,36 +3,26 @@ USE [MARKTEC]
 GO
 
 /* PROC DESCRIPTION */
-CREATE OR ALTER PROCEDURE [SP_Login]
+CREATE OR ALTER PROCEDURE [SP_ItemCategoryNameFilter]
 	/* SP Parameters */
-	@inUsername NVARCHAR(32),
-	@inPassword NVARCHAR(32),
 	@outResultCode INT OUTPUT
 AS
 BEGIN
 	SET NOCOUNT ON;
 	BEGIN TRY
 		SET @outResultCode = 0; /* Unassigned code */
-		IF OBJECT_ID(N'dbo.User', N'U') IS NOT NULL
-			BEGIN
-				IF EXISTS (SELECT 1 FROM [dbo].[User] AS [U] WHERE ([U].[Username] = @inUsername AND [U].[Password] = @inPassword))
-					BEGIN
-						SET @outResultCode = 5200; /* OK */
-						RETURN;
-					END;
-				ELSE
-					BEGIN
-						SET @outResultCode = 5401; /* User not found or User found but the password did not match */
-						RETURN;
-					END;
-			END;
-		ELSE
-			BEGIN
-				SET @outResultCode = 5404; /* ERROR : dbo.User DID NOT EXIST */
-				RETURN;
-			END;
+		BEGIN TRANSACTION [SelectItemCategories]
+			SELECT [IC].[Name]
+			FROM [dbo].[ItemCategory] AS [IC]
+			ORDER BY [IC].[Name];
+			SET @outResultCode = 5200; /* OK */
+		COMMIT TRANSACTION [SelectItemCategories]		
 	END TRY
 	BEGIN CATCH
+		IF @@TRANCOUNT > 0
+			BEGIN
+				ROLLBACK TRANSACTION [SelectItemCategories]
+			END;
 		IF OBJECT_ID(N'dbo.ErrorLog', N'U') IS NOT NULL /* Check Error table existence */
 			BEGIN
 				/* Update Error table */

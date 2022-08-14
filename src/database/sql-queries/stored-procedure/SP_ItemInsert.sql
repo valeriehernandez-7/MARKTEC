@@ -14,7 +14,7 @@ BEGIN
 	SET NOCOUNT ON;
 	BEGIN TRY
 		SET @outResultCode = 0; /* Unassigned code */
-		IF NOT EXISTS (SELECT 1 FROM [dbo].[Item] I WHERE [I].[Description] = @inDescription)
+		IF NOT EXISTS (SELECT 1 FROM [dbo].[Item] AS [I] WHERE [I].[Description] = @inDescription)
 			BEGIN
 				BEGIN TRANSACTION [InsertItem]
 					INSERT INTO [dbo].[Item] (
