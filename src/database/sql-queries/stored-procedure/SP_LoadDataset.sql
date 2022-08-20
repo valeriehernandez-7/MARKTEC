@@ -5,7 +5,8 @@ GO
 /* PROC DESCRIPTION */
 CREATE OR ALTER PROCEDURE [SP_LoadDataset]
 	/* SP Parameters */
-	@inXMLPath NVARCHAR(MAX) = 'C:\Users\vmind\Documents\GitHub\MARKTEC\src\database\data\dataset.xml',
+	@inS3ArnFile NVARCHAR(2048),
+	@inRDSFilePath NVARCHAR(2048),
 	@outResultCode INT OUTPUT
 AS
 BEGIN
@@ -13,11 +14,22 @@ BEGIN
 	BEGIN TRY
 		SET @outResultCode = 0; /* OK */
 
+		IF (@inS3ArnFile IS NULL)
+			BEGIN
+				SET @inS3ArnFile = 'arn:aws:s3:::datasetbases1/dataset.xml'; /* @inS3ArnFile default value */
+			END;
+		IF (@inRDSFilePath IS NULL)
+			BEGIN
+				SET @inRDSFilePath = 'D:\S3\dataset.xml'; /* @inRDSFilePath default value */
+			END;
+
+		EXECUTE MSDB.DBO.RDS_DOWNLOAD_FROM_S3 @inS3ArnFile, @inRDSFilePath, 1; /* Download XML file from S3 Bucket (Amazon RDS for SQL Server SP) */
+
 		DECLARE
 			@hdoc INT,
 			@Data XML,
 			@outData XML, --  out parameter 
-			@Command NVARCHAR(500) = 'SELECT @Data = D FROM OPENROWSET (BULK '  + CHAR(39) + @inXMLPath + CHAR(39) + ', SINGLE_BLOB) AS Data (D)',
+			@Command NVARCHAR(500) = 'SELECT @Data = D FROM OPENROWSET (BULK '  + CHAR(39) + @inRDSFilePath + CHAR(39) + ', SINGLE_BLOB) AS Data (D)',
 			@Parameters NVARCHAR(500) = N'@Data [XML] OUTPUT';
 
 		EXECUTE SP_EXECUTESQL @Command, @Parameters, @Data = @outData OUTPUT; -- execute the dinamic SQL command
