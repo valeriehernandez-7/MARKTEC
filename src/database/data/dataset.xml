@@ -1,28 +1,232 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Datos>
-    <Usuarios>
-        <Usuario Nombre="_vmind" Password="2020010829"/>
-        <Usuario Nombre="efmz200" Password="2018146983"/>
-        <Usuario Nombre="AVindas" Password="now1234*"/>
-        <Usuario Nombre="gruiz" Password="shop56975"/>
-        <Usuario Nombre="jaguero" Password="45pow56"/>
-        <Usuario Nombre="JRamirez" Password="C454gr1"/>
-        <Usuario Nombre="lCamacho" Password="LPerez1"/>
-        <Usuario Nombre="LPerez" Password="MyPass123*"/>
-        <Usuario Nombre="ralvarez" Password="MyPass123*"/>
-        <Usuario Nombre="ulljose" Password="ted5454"/>
-        <Usuario Nombre="vmata" Password="159797530a"/>
-    </Usuarios>
-    <ClasesdeArticulos>
-        <ClaseArticulo Nombre="AA"/>
-        <ClaseArticulo Nombre="BB"/>
-        <ClaseArticulo Nombre="CC"/>
-    </ClasesdeArticulos>
-    <Articulos>
-        <Articulo Nombre="Aceite semi sintetico para motor de herramientas electricas 100 ml" ClasedeArticulo="BB" Precio="2192.00"/>
-        <Articulo Nombre="Adaptador 3/8 pulgada a 1/2 pulgada" ClasedeArticulo="AA" Precio="3575.00"/>
-        <Articulo Nombre="Aireador para fregadero" ClasedeArticulo="BB" Precio="1875.00"/>
-        <Articulo Nombre="Aldaba para porton 6 pulgadas" ClasedeArticulo="AA" Precio="3125.00"/>
-        <Articulo Nombre="Alicate aislado de puntas de 6-1/2 pulgadas" ClasedeArticulo="CC" Precio="14375.10"/>
-    </Articulos>
+  <!-- dbo.User Data -->
+  <Usuarios>
+    <Usuario Nombre="JVasquez" Password="Bi30G2" />
+    <Usuario Nombre="AChavez" Password="7bM3z2" />
+    <Usuario Nombre="PHidalgo" Password="0tt89D" />
+    <Usuario Nombre="KNunez" Password="9CdV40" />
+    <Usuario Nombre="FKiros" Password="gHK364" />
+    <Usuario Nombre="WJimenez" Password="fJe035" />
+    <Usuario Nombre="DArrieta" Password="2J4aq0" />
+    <Usuario Nombre="HGarita" Password="aOC883" />
+    <Usuario Nombre="MSalas" Password="pQ009O" />
+    <Usuario Nombre="MSolano" Password="X9z5A1" />
+  </Usuarios>
+  <!-- dbo.ItemCategory Data -->
+  <ClasesdeArticulos>
+    <ClaseArticulo Nombre="Herramientas de mano" />
+    <ClaseArticulo Nombre="Herramientas de sujecion" />
+    <ClaseArticulo Nombre="Elementos de union" />
+    <ClaseArticulo Nombre="Tuberias" />
+    <ClaseArticulo Nombre="Componentes diversos" />
+    <ClaseArticulo Nombre="Escaleras" />
+    <ClaseArticulo Nombre="Pinturas" />
+    <ClaseArticulo Nombre="Lubricantes" />
+    <ClaseArticulo Nombre="Herrajes" />
+    <ClaseArticulo Nombre="Herramientas abrasivas" />
+  </ClasesdeArticulos>
+  <!-- dbo.Item Data -->
+  <Articulos>
+    <Articulo Nombre="Alicates PMA Al2 " ClasedeArticulo="Herramientas de mano" Precio="1806.523" />
+    <Articulo Nombre="Alicates PMA Al5" ClasedeArticulo="Herramientas de mano" Precio="1427.738" />
+    <Articulo Nombre="Tenazas articuladas Bahco" ClasedeArticulo="Herramientas de mano" Precio="1135.572" />
+    <Articulo Nombre="Alicates cortantes Bahco" ClasedeArticulo="Herramientas de mano" Precio="2513.551" />
+    <Articulo Nombre="Alicates Bahco Ergo" ClasedeArticulo="Herramientas de mano" Precio="1174.033" />
+    <Articulo Nombre="Alicates combinados aislados" ClasedeArticulo="Herramientas de mano" Precio="2405.478" />
+    <Articulo Nombre="Alicates de boca semiredonda aislados" ClasedeArticulo="Herramientas de mano" Precio="5610.782" />
+    <Articulo Nombre="Alicates de corte lateral aislado" ClasedeArticulo="Herramientas de mano" Precio="4834.709" />
+    <Articulo Nombre="Tenazas pico de loro" ClasedeArticulo="Herramientas de mano" Precio="3688.685" />
+    <Articulo Nombre="Corta alambres para cobre y aluminio" ClasedeArticulo="Herramientas de mano" Precio="1295.067" />
+    <Articulo Nombre="Calzos alicates" ClasedeArticulo="Herramientas de mano" Precio="6251.925" />
+    <Articulo Nombre="Alicates Ratio ProSeries" ClasedeArticulo="Herramientas de mano" Precio="4265.148" />
+    <Articulo Nombre="Cepillos taza " ClasedeArticulo="Herramientas de mano" Precio="887.227" />
+    <Articulo Nombre="Cepillos cilindricos " ClasedeArticulo="Herramientas de mano" Precio="6804.429" />
+    <Articulo Nombre="Cepillos de diametro pequeno " ClasedeArticulo="Herramientas de mano" Precio="4020.473" />
+    <Articulo Nombre="Tijeras cortahilos " ClasedeArticulo="Herramientas de mano" Precio="1226.624" />
+    <Articulo Nombre="Tijeras rotatorias " ClasedeArticulo="Herramientas de mano" Precio="2944.068" />
+    <Articulo Nombre="Tijeras de ceramica " ClasedeArticulo="Herramientas de mano" Precio="1744.796" />
+    <Articulo Nombre="Rasqueta multiusos " ClasedeArticulo="Herramientas de mano" Precio="5225.016" />
+    <Articulo Nombre="Tijeras Clean Up" ClasedeArticulo="Herramientas de mano" Precio="6428.625" />
+    <Articulo Nombre="Rascavidrios profesionales " ClasedeArticulo="Herramientas de mano" Precio="4806.336" />
+    <Articulo Nombre="Rascadores metalicos " ClasedeArticulo="Herramientas de mano" Precio="1029.72" />
+    <Articulo Nombre="Cortadores reforzados " ClasedeArticulo="Herramientas de mano" Precio="3103.337" />
+    <Articulo Nombre="Cortadores automaticos" ClasedeArticulo="Herramientas de mano" Precio="4497.393" />
+    <Articulo Nombre="Aspirador de polvo" ClasedeArticulo="Herramientas de mano" Precio="4921.487" />
+    <Articulo Nombre="Aspiradores de lodo" ClasedeArticulo="Herramientas de mano" Precio="5165.144" />
+    <Articulo Nombre="Purificador de aire" ClasedeArticulo="Herramientas de mano" Precio="6974.913" />
+    <Articulo Nombre="Extractores de polvo" ClasedeArticulo="Herramientas de mano" Precio="5678.059" />
+    <Articulo Nombre="Extractores trifasicos" ClasedeArticulo="Herramientas de mano" Precio="2550.946" />
+    <Articulo Nombre="Lima para maquinas " ClasedeArticulo="Herramientas de mano" Precio="5740.984" />
+    <Articulo Nombre="Lima RIF de codillo dobles" ClasedeArticulo="Herramientas de mano" Precio="6255.044" />
+    <Articulo Nombre="Lima plana especial" ClasedeArticulo="Herramientas de mano" Precio="6964.88" />
+    <Articulo Nombre="Lima de mano" ClasedeArticulo="Herramientas de mano" Precio="6143.08" />
+    <Articulo Nombre="Limas DIP" ClasedeArticulo="Herramientas de mano" Precio="4778.612" />
+    <Articulo Nombre="Martillos de laton" ClasedeArticulo="Herramientas de mano" Precio="4618.779" />
+    <Articulo Nombre="Martillo de caucho " ClasedeArticulo="Herramientas de mano" Precio="5998.945" />
+    <Articulo Nombre="Martillo con tacos" ClasedeArticulo="Herramientas de mano" Precio="4252.461" />
+    <Articulo Nombre="Martillo BMS Power" ClasedeArticulo="Herramientas de mano" Precio="4661.529" />
+    <Articulo Nombre="Martillos encofradores" ClasedeArticulo="Herramientas de mano" Precio="4280.045" />
+    <Articulo Nombre="Martillos sin templar" ClasedeArticulo="Herramientas de mano" Precio="4919.134" />
+    <Articulo Nombre="Alcotanas Bellota" ClasedeArticulo="Herramientas de mano" Precio="2918.512" />
+    <Articulo Nombre="Martillos Bellota" ClasedeArticulo="Herramientas de mano" Precio="864.094" />
+    <Articulo Nombre="Martillo encofrador" ClasedeArticulo="Herramientas de mano" Precio="6389.766" />
+    <Articulo Nombre="Destornillador electrico" ClasedeArticulo="Herramientas de mano" Precio="5713.171" />
+    <Articulo Nombre="Llaves dinamometricas" ClasedeArticulo="Herramientas de mano" Precio="3718.38" />
+    <Articulo Nombre="Cortatubos biselador" ClasedeArticulo="Herramientas de mano" Precio="4192.921" />
+    <Articulo Nombre="Tenazas EGA Master" ClasedeArticulo="Herramientas de mano" Precio="2355.815" />
+    <Articulo Nombre="Llave dinamometrica electronica " ClasedeArticulo="Herramientas de mano" Precio="1138.637" />
+    <Articulo Nombre="Llaves dinamometricas mecanicas" ClasedeArticulo="Herramientas de mano" Precio="6471.505" />
+    <Articulo Nombre="Llave dinamometrica Garant" ClasedeArticulo="Herramientas de mano" Precio="2336.217" />
+    <Articulo Nombre="Llaves de impacto a bateria EGA Master" ClasedeArticulo="Herramientas de mano" Precio="2722.083" />
+    <Articulo Nombre="Llaves de vaso de impacto EGA Master" ClasedeArticulo="Herramientas de mano" Precio="2981.178" />
+    <Articulo Nombre="Vasos carracas y accesorios" ClasedeArticulo="Herramientas de mano" Precio="4244.867" />
+    <Articulo Nombre="Llaves de impacto a bateria Fein ASCD 12100 W4" ClasedeArticulo="Herramientas de mano" Precio="2811.691" />
+    <Articulo Nombre="Llaves de impacto a bateria Fein ASCD 12150 W4C" ClasedeArticulo="Herramientas de mano" Precio="4788.939" />
+    <Articulo Nombre="Llaves de impacto a bateria Fein ASCD 12150 W4 Select" ClasedeArticulo="Herramientas de mano" Precio="4077.052" />
+    <Articulo Nombre="Llaves de impacto a bateria Fein ASCD 12150 W8 Select" ClasedeArticulo="Herramientas de mano" Precio="3126.982" />
+    <Articulo Nombre="Llaves de impacto a bateria Fein ASCD 18200 W4 Select" ClasedeArticulo="Herramientas de mano" Precio="6679.695" />
+    <Articulo Nombre="Anillo de obturacion " ClasedeArticulo="Herramientas de sujecion" Precio="1806.523" />
+    <Articulo Nombre="Clip de seguridad" ClasedeArticulo="Herramientas de sujecion" Precio="1427.738" />
+    <Articulo Nombre="Brida redonda en acero" ClasedeArticulo="Herramientas de sujecion" Precio="1135.572" />
+    <Articulo Nombre="Soporte para alicate de corte" ClasedeArticulo="Herramientas de sujecion" Precio="2513.551" />
+    <Articulo Nombre="Brida regulable" ClasedeArticulo="Herramientas de sujecion" Precio="1174.033" />
+    <Articulo Nombre="Bases adhesivas nylon Cofil" ClasedeArticulo="Herramientas de sujecion" Precio="2405.478" />
+    <Articulo Nombre="Bridas de nylon de colores Cofil" ClasedeArticulo="Herramientas de sujecion" Precio="5610.782" />
+    <Articulo Nombre="Abrazaderas" ClasedeArticulo="Herramientas de sujecion" Precio="4834.709" />
+    <Articulo Nombre="Bridas de dentado externo" ClasedeArticulo="Herramientas de sujecion" Precio="3688.685" />
+    <Articulo Nombre="Bridas metalicas" ClasedeArticulo="Herramientas de sujecion" Precio="1295.067" />
+    <Articulo Nombre="Bridas detectables" ClasedeArticulo="Herramientas de sujecion" Precio="6251.925" />
+    <Articulo Nombre="Bridas HellermannTyton" ClasedeArticulo="Herramientas de sujecion" Precio="4265.148" />
+    <Articulo Nombre="Mordaza senoidal con eje lateral" ClasedeArticulo="Herramientas de sujecion" Precio="887.227" />
+    <Articulo Nombre="Mordaza senoidal con eje delantero" ClasedeArticulo="Herramientas de sujecion" Precio="6804.429" />
+    <Articulo Nombre="Mordaza de accionamiento neumatico" ClasedeArticulo="Herramientas de sujecion" Precio="4020.473" />
+    <Articulo Nombre="Tornilo M12" ClasedeArticulo="Herramientas de sujecion" Precio="1226.624" />
+    <Articulo Nombre="Tornilo M8" ClasedeArticulo="Herramientas de sujecion" Precio="2944.068" />
+    <Articulo Nombre="Tornillo de retencion" ClasedeArticulo="Herramientas de sujecion" Precio="1744.796" />
+    <Articulo Nombre="Abrazaderas collarin " ClasedeArticulo="Elementos de union" Precio="1806.523" />
+    <Articulo Nombre="Abrazaderas diametro fijo" ClasedeArticulo="Elementos de union" Precio="1427.738" />
+    <Articulo Nombre="Abrazaderas doble puente" ClasedeArticulo="Elementos de union" Precio="1135.572" />
+    <Articulo Nombre="Anillos tensores Jacob" ClasedeArticulo="Elementos de union" Precio="2513.551" />
+    <Articulo Nombre="Abrazaderas con junta insertada a la fabrica" ClasedeArticulo="Elementos de union" Precio="1174.033" />
+    <Articulo Nombre="Abrazaderas para juntas perfiladas" ClasedeArticulo="Elementos de union" Precio="2405.478" />
+    <Articulo Nombre="Abrazadera Quick Connect y abrazadera sin masilla para juntas" ClasedeArticulo="Elementos de union" Precio="5610.782" />
+    <Articulo Nombre="Abrazadera con aglomerante para juntas" ClasedeArticulo="Elementos de union" Precio="4834.709" />
+    <Articulo Nombre="Brazo en escuadra " ClasedeArticulo="Tuberias" Precio="1806.523" />
+    <Articulo Nombre="Dedo de centraje fileteado" ClasedeArticulo="Tuberias" Precio="1427.738" />
+    <Articulo Nombre="Brazo en escuadra" ClasedeArticulo="Tuberias" Precio="1135.572" />
+    <Articulo Nombre="Codo robusto con enganche" ClasedeArticulo="Tuberias" Precio="2513.551" />
+    <Articulo Nombre="Codos de cristal" ClasedeArticulo="Tuberias" Precio="1174.033" />
+    <Articulo Nombre="Racor Orkli Pro" ClasedeArticulo="Tuberias" Precio="2405.478" />
+    <Articulo Nombre="Sistemas antitorsion Rotunion" ClasedeArticulo="Tuberias" Precio="5610.782" />
+    <Articulo Nombre="Racores y tuberia Airwork" ClasedeArticulo="Tuberias" Precio="4834.709" />
+    <Articulo Nombre="Racores y tubos para vacio Vuototecnica" ClasedeArticulo="Tuberias" Precio="3688.685" />
+    <Articulo Nombre="Racores DIN 2353 Stauff" ClasedeArticulo="Tuberias" Precio="1295.067" />
+    <Articulo Nombre="Racor fijo macho SharkBite Press" ClasedeArticulo="Tuberias" Precio="6251.925" />
+    <Articulo Nombre="Compresores de piston y de tornillo Imopac FIAC" ClasedeArticulo="Tuberias" Precio="4265.148" />
+    <Articulo Nombre="Enchufes rapidos Imopac Serie Seguridad (S)" ClasedeArticulo="Tuberias" Precio="887.227" />
+    <Articulo Nombre="Enchufes rapidos Imopac Serie CRHL" ClasedeArticulo="Tuberias" Precio="6804.429" />
+    <Articulo Nombre="Enchufes rapidos Imopac Serie Eurostandar" ClasedeArticulo="Tuberias" Precio="4020.473" />
+    <Articulo Nombre="Enchufes rapidos Imopac Perfil Mini" ClasedeArticulo="Tuberias" Precio="1226.624" />
+    <Articulo Nombre="Bolas estaticas de limpieza Lechler Serie" ClasedeArticulo="Componentes diversos" Precio="1806.523" />
+    <Articulo Nombre="Cabezales retractiles Lechler PopUp Whirly " ClasedeArticulo="Componentes diversos" Precio="1427.738" />
+    <Articulo Nombre="Software Lechler TankClean" ClasedeArticulo="Componentes diversos" Precio="1135.572" />
+    <Articulo Nombre="Boquillas de cono hueco de flujo axial Lechler Serie 220" ClasedeArticulo="Componentes diversos" Precio="2513.551" />
+    <Articulo Nombre="Boquillas de cono hueco de flujo tangencial Lechler Serie" ClasedeArticulo="Componentes diversos" Precio="1174.033" />
+    <Articulo Nombre="Business Moulding Supplies" ClasedeArticulo="Componentes diversos" Precio="2405.478" />
+    <Articulo Nombre="Boquillas con puntas intercambiables BMS BUSE_AMOV" ClasedeArticulo="Componentes diversos" Precio="5610.782" />
+    <Articulo Nombre="Adaptadores pequenos de boquilla BMS ADAPT" ClasedeArticulo="Componentes diversos" Precio="4834.709" />
+    <Articulo Nombre="Boquillas grandes modelos BMS GRDS_MOD" ClasedeArticulo="Componentes diversos" Precio="3688.685" />
+    <Articulo Nombre="Boquillas monobloque BMS MONO" ClasedeArticulo="Componentes diversos" Precio="1295.067" />
+    <Articulo Nombre="Boquillas tipo constructor BMS CONS" ClasedeArticulo="Componentes diversos" Precio="6251.925" />
+    <Articulo Nombre="Boquillas para PU Illbruck AA038" ClasedeArticulo="Componentes diversos" Precio="4265.148" />
+    <Articulo Nombre="Proteccion perimetral HWS " ClasedeArticulo="Escaleras" Precio="1806.523" />
+    <Articulo Nombre="Plataformas universales" ClasedeArticulo="Escaleras" Precio="1427.738" />
+    <Articulo Nombre="Estabilizador de fachada Brio ST" ClasedeArticulo="Escaleras" Precio="1135.572" />
+    <Articulo Nombre="Andamios de marco Dorpa" ClasedeArticulo="Escaleras" Precio="2513.551" />
+    <Articulo Nombre="Andamio multidireccional Brio" ClasedeArticulo="Escaleras" Precio="1174.033" />
+    <Articulo Nombre="Lasur acrilico hidrofugo al agua Xylazel Sol Lasur Hidrofugante" ClasedeArticulo="Pinturas" Precio="1806.523" />
+    <Articulo Nombre="Lasur Xylazel Deco Lasur" ClasedeArticulo="Pinturas" Precio="1427.738" />
+    <Articulo Nombre="Decora y protege la madera Xylazel Plus" ClasedeArticulo="Pinturas" Precio="1135.572" />
+    <Articulo Nombre="Barnices protectores Xylazel Barniz" ClasedeArticulo="Pinturas" Precio="2513.551" />
+    <Articulo Nombre="Lasur de acabado al agua protector decorativo mate" ClasedeArticulo="Pinturas" Precio="1174.033" />
+    <Articulo Nombre="Barnices al agua Monto Monpalglass" ClasedeArticulo="Pinturas" Precio="2405.478" />
+    <Articulo Nombre="Barnices al agua Monto Monpal" ClasedeArticulo="Pinturas" Precio="5610.782" />
+    <Articulo Nombre="Barnices al agua Monto Montoglass" ClasedeArticulo="Pinturas" Precio="4834.709" />
+    <Articulo Nombre="Barnices transparentes Monto Brillante acabado estucos" ClasedeArticulo="Pinturas" Precio="3688.685" />
+    <Articulo Nombre="Barnices Monto Sutil" ClasedeArticulo="Pinturas" Precio="1295.067" />
+    <Articulo Nombre="Barnices de parquet Mapei Ultracoat Universal Cleaner" ClasedeArticulo="Pinturas" Precio="6251.925" />
+    <Articulo Nombre="Barnices de parquet para pavimentos Mapei Ultracoat Universal Base" ClasedeArticulo="Pinturas" Precio="4265.148" />
+    <Articulo Nombre="Barnices de parquet Mapei Ultracoat Top Deck Cleaner" ClasedeArticulo="Pinturas" Precio="887.227" />
+    <Articulo Nombre="Barnices de parquet Mapei Ultracoat Toning Base" ClasedeArticulo="Pinturas" Precio="6804.429" />
+    <Articulo Nombre="Barnices de parquet Mapei Ultracoat Soft Touch Finish" ClasedeArticulo="Pinturas" Precio="4020.473" />
+    <Articulo Nombre="Revestimientos conductor CRC Graphit " ClasedeArticulo="Lubricantes" Precio="1806.523" />
+    <Articulo Nombre="Antideslizantes de correas CRC Belt Grip FPS" ClasedeArticulo="Lubricantes" Precio="1427.738" />
+    <Articulo Nombre="Antideslizantes de correas CRC Belt Grip Ind 500 ML" ClasedeArticulo="Lubricantes" Precio="1135.572" />
+    <Articulo Nombre="Pastas de montajes antigripantes alta temperatura. CRC Assembly paste FPS 500 gr" ClasedeArticulo="Lubricantes" Precio="2513.551" />
+    <Articulo Nombre="Pastas de montaje antigripantes alta temperatura. CRC Assembly paste FPS 500 ml" ClasedeArticulo="Lubricantes" Precio="1174.033" />
+    <Articulo Nombre="Grasa Blanca P.T.F.E Pintyplus Oil" ClasedeArticulo="Lubricantes" Precio="2405.478" />
+    <Articulo Nombre="Silicona lubricante en spray Pintyplus Oil" ClasedeArticulo="Lubricantes" Precio="5610.782" />
+    <Articulo Nombre="Aceite desmoldante Pintyplus Oil" ClasedeArticulo="Lubricantes" Precio="4834.709" />
+    <Articulo Nombre="Aceite multiusos Pintyplus Oil" ClasedeArticulo="Lubricantes" Precio="3688.685" />
+    <Articulo Nombre="Business Moulding Supplies" ClasedeArticulo="Lubricantes" Precio="1295.067" />
+    <Articulo Nombre="Grasa Silicona BMS SGTK" ClasedeArticulo="Lubricantes" Precio="6251.925" />
+    <Articulo Nombre="Grasa blanca de litio BMS WTG" ClasedeArticulo="Lubricantes" Precio="4265.148" />
+    <Articulo Nombre="Compuesto antigripante a base de niquel y grafito BMS NTL" ClasedeArticulo="Lubricantes" Precio="887.227" />
+    <Articulo Nombre="Compuesto antigripado a base de cobre y grafito BMS CTL" ClasedeArticulo="Lubricantes" Precio="6804.429" />
+    <Articulo Nombre="Grasa de alta temp" ClasedeArticulo="Lubricantes" Precio="4020.473" />
+    <Articulo Nombre="Maneta de plastico Bruhl Flex II " ClasedeArticulo="Herrajes" Precio="1806.523" />
+    <Articulo Nombre="Empunaduras graduables Elesa Ganter Gama GN" ClasedeArticulo="Herrajes" Precio="1427.738" />
+    <Articulo Nombre="Tiradores CORTIZO Art Infinity" ClasedeArticulo="Herrajes" Precio="1135.572" />
+    <Articulo Nombre="Asa tirador Teyco 536" ClasedeArticulo="Herrajes" Precio="2513.551" />
+    <Articulo Nombre="Tirador Teyco Premier Rombo 547/543" ClasedeArticulo="Herrajes" Precio="1174.033" />
+    <Articulo Nombre="Tirador Teyco Emotive 522" ClasedeArticulo="Herrajes" Precio="2405.478" />
+    <Articulo Nombre="Tirador de aluminio Teyco Olimpic 516" ClasedeArticulo="Herrajes" Precio="5610.782" />
+    <Articulo Nombre="Asa tirador Teyco Asa 535" ClasedeArticulo="Herrajes" Precio="4834.709" />
+    <Articulo Nombre="Pomo mampara doble" ClasedeArticulo="Herrajes" Precio="3688.685" />
+    <Articulo Nombre="Tiradores para puertas correderas Tempo" ClasedeArticulo="Herrajes" Precio="1295.067" />
+    <Articulo Nombre="Manillas correderas elevables en acabados de tendencia HOPPE" ClasedeArticulo="Herrajes" Precio="6251.925" />
+    <Articulo Nombre="Amilibia y de la Iglesia S.A.  AMIG" ClasedeArticulo="Herrajes" Precio="4265.148" />
+    <Articulo Nombre="Tiradores Amig 1006" ClasedeArticulo="Herrajes" Precio="887.227" />
+    <Articulo Nombre="Escudos Amig 101" ClasedeArticulo="Herrajes" Precio="6804.429" />
+    <Articulo Nombre="Escudos Amig 100" ClasedeArticulo="Herrajes" Precio="4020.473" />
+    <Articulo Nombre="Pomos Trivel Vent" ClasedeArticulo="Herrajes" Precio="1226.624" />
+    <Articulo Nombre="Tiradores Trivel Norma" ClasedeArticulo="Herrajes" Precio="2944.068" />
+    <Articulo Nombre="Tiradores Trivel Cubitus" ClasedeArticulo="Herrajes" Precio="1744.796" />
+    <Articulo Nombre="Tiradores Trivel Circum" ClasedeArticulo="Herrajes" Precio="5225.016" />
+    <Articulo Nombre="Tiradores Saheco Glass" ClasedeArticulo="Herrajes" Precio="6428.625" />
+    <Articulo Nombre="Pomos y tiradores" ClasedeArticulo="Herrajes" Precio="4806.336" />
+    <Articulo Nombre="Heinrich Kipp Werk KG" ClasedeArticulo="Herrajes" Precio="1029.72" />
+    <Articulo Nombre="Empunaduras y botones Kipp" ClasedeArticulo="Herrajes" Precio="3103.337" />
+    <Articulo Nombre="Empunaduras curvas Kipp" ClasedeArticulo="Herrajes" Precio="4497.393" />
+    <Articulo Nombre="Kit tirador aluminio redondo 350 y 500 mm Hautau" ClasedeArticulo="Herrajes" Precio="4921.487" />
+    <Articulo Nombre="Tiradores de aleta Alma 7060" ClasedeArticulo="Herrajes" Precio="5165.144" />
+    <Articulo Nombre="Tiradores Alma Austral 7010/7011/7012" ClasedeArticulo="Herrajes" Precio="6974.913" />
+    <Articulo Nombre="Discos de Laminas" ClasedeArticulo="Herramientas abrasivas" Precio="1806.523" />
+    <Articulo Nombre="Cepillos de Laminas" ClasedeArticulo="Herramientas abrasivas" Precio="1427.738" />
+    <Articulo Nombre="Unitized Black Cleaner" ClasedeArticulo="Herramientas abrasivas" Precio="1135.572" />
+    <Articulo Nombre="Discos de Corte y Desbaste" ClasedeArticulo="Herramientas abrasivas" Precio="2513.551" />
+    <Articulo Nombre="Discos Fibra" ClasedeArticulo="Herramientas abrasivas" Precio="1174.033" />
+    <Articulo Nombre="Discos de Gancho y Bucle y Adhesivos" ClasedeArticulo="Herramientas abrasivas" Precio="2405.478" />
+    <Articulo Nombre="Discos de Cambio Rapido" ClasedeArticulo="Herramientas abrasivas" Precio="5610.782" />
+    <Articulo Nombre="Bandas Manguitos Cartuchos" ClasedeArticulo="Herramientas abrasivas" Precio="4834.709" />
+    <Articulo Nombre="Hojas Rollos y Abrasivos de Mano" ClasedeArticulo="Herramientas abrasivas" Precio="3688.685" />
+    <Articulo Nombre="Pasta de pulido" ClasedeArticulo="Herramientas abrasivas" Precio="1295.067" />
+    <Articulo Nombre="Herramientas Electricas" ClasedeArticulo="Herramientas abrasivas" Precio="6251.925" />
+    <Articulo Nombre="ScotchBrite  y Trizact " ClasedeArticulo="Herramientas abrasivas" Precio="4265.148" />
+    <Articulo Nombre="Caucho Abrasivo" ClasedeArticulo="Herramientas abrasivas" Precio="887.227" />
+    <Articulo Nombre="Muelas con Vastago" ClasedeArticulo="Herramientas abrasivas" Precio="6804.429" />
+    <Articulo Nombre="Cepillos de Alambre" ClasedeArticulo="Herramientas abrasivas" Precio="4020.473" />
+    <Articulo Nombre="Programa Parquet" ClasedeArticulo="Herramientas abrasivas" Precio="1226.624" />
+    <Articulo Nombre="Programa para Marmol" ClasedeArticulo="Herramientas abrasivas" Precio="2944.068" />
+    <Articulo Nombre="Fresas de Metal Duro" ClasedeArticulo="Herramientas abrasivas" Precio="1744.796" />
+    <Articulo Nombre="Otros Productos" ClasedeArticulo="Herramientas abrasivas" Precio="5225.016" />
+    <Articulo Nombre="Abrasivos Rosver" ClasedeArticulo="Herramientas abrasivas" Precio="6428.625" />
+    <Articulo Nombre="Herramientas de diamante y CBN Pferd Policap" ClasedeArticulo="Herramientas abrasivas" Precio="4806.336" />
+    <Articulo Nombre="Dediles lijadores Pferd Policap" ClasedeArticulo="Herramientas abrasivas" Precio="1029.72" />
+    <Articulo Nombre="Manguitos lijadores Pferd" ClasedeArticulo="Herramientas abrasivas" Precio="3103.337" />
+    <Articulo Nombre="Rodillos escurridores Incale" ClasedeArticulo="Herramientas abrasivas" Precio="4497.393" />
+    <Articulo Nombre="Rodillos abrasivos de 400 mm Fladder" ClasedeArticulo="Herramientas abrasivas" Precio="4921.487" />
+    <Articulo Nombre="Rodillos abrasivos de 200 mm Fladder" ClasedeArticulo="Herramientas abrasivas" Precio="4921.487" />
+  </Articulos>
 </Datos>
