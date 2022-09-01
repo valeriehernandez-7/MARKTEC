@@ -12,6 +12,28 @@ export const getItems = async (req,res) => {
 
 
 //exect sp
+
+//filtrar items por cantidad
+export const itemAmount=  async (req, res) => {
+    const pool= await getConection()
+    const {itemAmount}  = req.body;
+    console.log();
+    if (itemAmount==null){
+        const result= await pool.request()
+                    .input('inAmount', sql.Int,null).
+                    output('outResultCode', sql.Int).
+                    execute('SP_ItemAmountFilter');
+        res.json(result.recordset);    
+    }else{
+        const result= await pool.request()
+                        .input('inAmount', sql.Int,itemAmount).
+                        output('outResultCode', sql.Int).
+                        execute('SP_ItemAmountFilter');
+        res.json(result.recordset);
+    };    
+}
+
+//filtado de items por categoria 
 export const itemsCategory = async (req, res) => {
     const pool= await getConection()
     const {itemCategoryName}  = req.body;
@@ -27,10 +49,18 @@ export const itemsCategory = async (req, res) => {
                         .input('inCategoryName', sql.NVARCHAR(64),itemCategoryName).
                         output('outResultCode', sql.Int).
                         execute('SP_ItemCategoryFilter');
-        console.log('itemCategoryName');
         res.json(result.recordset);
     };    
 }
+
+//listado de categorias
+export const itemsCat = async (req, res) =>{
+    const pool= await getConection() 
+    const result= await pool.request().
+                    output('outResultCode', sql.int).
+                    execute('SP_ItemCategoryNameFilter');
+    res.json(result.recordset)
+};
 
 //filtrar items por descripcion
 export const itemsDescription = async (req, res) => {

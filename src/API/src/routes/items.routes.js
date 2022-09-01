@@ -3,7 +3,9 @@ import {
     getItems,
     itemsCategory,
     itemInsert,
-    itemsDescription
+    itemsDescription,
+    itemsCat,
+    itemAmount
 } from '../controllers/items.controller'
 
 
@@ -12,14 +14,15 @@ const router = Router()
 
 router.get('/items',getItems)
 
-router.get('/itemsAmount',getItems)
+router.get('/itemsAmount',itemAmount)
 
-router.get('/itemsCategory',itemsCategory) 
+router.get('/itemsCategory',itemsCategory)
+
+router.get('/itemsCat',itemsCat) 
 
 router.get('/itemsCategoryName',getItems)  
 
 router.get('/itemsDescription',itemsDescription)
-
 
 router.post('/itemsInsert',itemInsert) 
 
