@@ -1,7 +1,12 @@
 import {Router} from 'express'
-import {getItems} from '../controllers/items.controller'
-import {itemsCategory} from '../controllers/items.controller'
-import {itemInsert} from '../controllers/items.controller'
+import {
+    getItems,
+    itemsCategory,
+    itemInsert,
+    itemsDescription
+} from '../controllers/items.controller'
+
+
 
 const router = Router()
 
@@ -13,7 +18,8 @@ router.get('/itemsCategory',itemsCategory)
 
 router.get('/itemsCategoryName',getItems)  
 
-router.get('/itemsDescription',getItems)
+router.get('/itemsDescription',itemsDescription)
+
 
 router.post('/itemsInsert',itemInsert) 
 

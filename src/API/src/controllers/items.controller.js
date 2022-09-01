@@ -1,7 +1,7 @@
 //import  sql from 'mssql'
 const sql = require('mssql')
 import { request } from 'express';
-import {login} from '../database/conection';
+import {getConection} from '../database/conection';
 
 export const getItems = async (req,res) => {
     const pool= await getConection()
@@ -32,6 +32,26 @@ export const itemsCategory = async (req, res) => {
     };    
 }
 
+//filtrar items por descripcion
+export const itemsDescription = async (req, res) => {
+    const pool= await getConection()
+    const {itemDescription}  = req.body;
+    console.log(itemDescription);
+    if (itemDescription==null){
+        const result= await pool.request()
+                    .input('inDescription', sql.NVARCHAR(128),null).
+                    output('outResultCode', sql.Int).
+                    execute('[SP_ItemDescriptionFilter]');
+        res.json(result.recordset);    
+    }else{
+        const result= await pool.request()
+                        .input('inDescription', sql.NVARCHAR(128),itemDescription).
+                        output('outResultCode', sql.Int).
+                        execute('[SP_ItemDescriptionFilter]');
+        res.json(result.recordset);
+    };    
+}
+
 export const itemInsert = (req,res) => {
     const {category,description,price}  = req.body;
     if (category == null ){
@@ -41,4 +61,6 @@ export const itemInsert = (req,res) => {
     }
     
 }
+
+
 
