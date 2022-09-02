@@ -37,14 +37,20 @@ function login() {
 
   const options = {
   method: "get",
-  mode: 'no-cors',
+  //mode: 'no-cors',
   headers: {"Content-Type": "application/json"},
 
   };
   // Petición HTTP
   console.log(JSON.stringify(datos));
-  fetch(url, options)
-  .then(response => console.log("hola", JSON.stringify(response)))
+  fetch(url, options).then(response => response.json())
+.then(response => {
+
+    console.log(response )
+
+}).catch(e => {
+    console.log(e);
+});
 
 }
 $("#logBtn").bind("click", login);
