@@ -1,0 +1,48 @@
+body{
+  font-family: arial;
+  background-image: url('../log_bg.jpg');
+}
+*{
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+}
+th, td {
+   text-align: left;
+   vertical-align: top;
+   border: 1px solid #000;
+   margin-left: 10px;
+   background-color: #FFF
+}
+
+.tablaItems{
+  width: 90%;
+  align:center;
+}
+.filtros {
+  width: auto;
+  height: auto;
+  background: #4e4d4d;
+  padding: 20px 30px;
+  border-top: 4px solid #017bab;
+  color: white;
+}
+
+.controls{
+  height: 30px;
+  border: 1px solid #017bab;
+  margin-bottom: 8px;
+  padding: 11px 10px;
+  background: #FFF;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.buttons{
+  width: 150px;
+  height: 30px;
+  background: #017bab;
+  border: none;
+  color:white;
+  margin-bottom:8px
+}

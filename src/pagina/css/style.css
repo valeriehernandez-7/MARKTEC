@@ -6,7 +6,7 @@
 
 body{
   font-family: arial;
-  background-image: url('log_bg.jpg');
+  background-image: url('../log_bg.jpg');
 }
 .form-login {
   width: 400px;
