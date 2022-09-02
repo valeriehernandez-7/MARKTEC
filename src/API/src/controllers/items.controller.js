@@ -3,11 +3,13 @@ const sql = require('mssql')
 import { request } from 'express';
 import {getConection} from '../database/conection';
 
-
+//solo prueba de conección
+//se debe eliminar
+//no olvidar borrar
+//no se utiliza 
 export const getItems = async (req,res) => {
     const pool= await getConection()
-    const result= await pool.request().query("Select * from item");
-    console.log(req.query);    
+    const result= await pool.request().query("Select * from item");    
     res.json(result.recordset);
 }
 
@@ -89,7 +91,7 @@ export const itemInsert = async (req,res) => {
     const result= await pool.request()
                     .input('inCategoryName', sql.NVARCHAR(64),category)
                     .input('inDescription', sql.NVARCHAR(128),description)
-                    .input('inPrice', sql.Money,nupricell,price).
+                    .input('inPrice', sql.Money,price).
                     output('outResultCode', sql.Int).
                     execute('SP_ItemInsert');
     res.json(result.output.outResultCode)
