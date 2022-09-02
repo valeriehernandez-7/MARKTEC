@@ -1,53 +1,35 @@
-//const Url = 'http://localhost:8000/login'
-//const data={
-//  "username":"JVasquez",
-//  "password": "Bi30G2"
-//}
-//$('.buttons').click(function functionName() {
-//    $.get(Url,function(data,status){
-//      console.log( '${data}')
-//    })
-//})
-
-
-
-
-
-
-
-function validateEmailAddress() {
-var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-return re.test(email);
-}
-
-
 function login() {
   var user = $("#usuario").val();
   var pass = $("#contrasena").val();
-  console.log(user,pass)
+  if (user == "" || pass==""){
+      window.alert("Debe ingresar un usuario y contraseña");
+      return;
+  }
+  if(user.includes(";") || pass.includes(";")){
+    window.alert("No debe incluir ; en el usuario o la conreaseña");
+    return;
+  }
   var url = "http://localhost:8000/login?"+ new URLSearchParams({
     usuario:user,
     pass:pass,
   })
-  //const Url = 'http://localhost:8000/login'
   var datos={
-    "username":"JVasquez",
-    password: "Bi30G2"
+    "username":user,
+    password: pass,
   }
-
   const options = {
   method: "get",
-  //mode: 'no-cors',
   headers: {"Content-Type": "application/json"},
-
   };
   // Petición HTTP
-  console.log(JSON.stringify(datos));
   fetch(url, options).then(response => response.json())
 .then(response => {
-
-    console.log(response )
-
+  if (response == 5200){
+      location.replace('file:///D:/Tec/S%202%202022/bases/t1/MARKTEC/src/pagina/principal.html');
+  }else{
+    window.alert("Usuario o contraseña invalidos");
+    return
+  }
 }).catch(e => {
     console.log(e);
 });

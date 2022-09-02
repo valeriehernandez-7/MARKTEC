@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>MARKTEC</title>
+    <link rel="stylesheet" href="principal.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+  </head>
+  <body>
+    <section class= "filtros">
+        <h5>MARKTEC </h5>
+
+        <section class="filt">
+          <input class="controls" type="text" id="cat" value="" placeholder="Categoría">
+          <input class="buttons" type="submit" id="catBtn" value="Filtrar por Categoría" onclick="catfil();">
+        </section>
+
+        <section class="filt">
+          <input class="controls" type="text" id="desc" value="" placeholder="Descripción">
+          <input class="buttons" type="submit" id="descBtn" value="Filtrar por Descripción" onclick="login();">
+        </section>
+
+        <section class="filt">
+          <input class="controls" type="text" id="cat" value="" placeholder="Categoría">
+          <input class="buttons" type="submit" id="catBtn" value="Filtrar por Categoría" onclick="login();">
+        </section>
+
+        <input class="buttons" type="submit" id="addBtn" value="Añadir artículo" onclick="login();">
+    </section>
+    <section>
+      <table class="default" id="tablaItems">
+        <tr>
+          <th>Descripcion</th>
+          <th>Tipo</th>
+          <th>Precio</th>
+        </tr>
+
+        <tbody>
+          
+        </tbody>
+
+      </table>
+    </section>
+  </body>
+</html>
