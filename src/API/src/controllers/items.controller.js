@@ -15,7 +15,7 @@ export const getItems = async (req,res) => {
 //filtrar items por cantidad
 export const itemAmount=  async (req, res) => {
     const pool= await getConection()
-    const {itemAmount}  = req.body;
+    var itemAmount = req.query.itemAmount;
     console.log();
     if (itemAmount==null){
         const result= await pool.request()
@@ -35,7 +35,7 @@ export const itemAmount=  async (req, res) => {
 //filtado de items por categoria 
 export const itemsCategory = async (req, res) => {
     const pool= await getConection()
-    const {itemCategoryName}  = req.body;
+    var itemCategoryName = req.query.itemCategoryName;
     console.log(itemCategoryName);
     if (itemCategoryName==null){
         const result= await pool.request()
@@ -64,7 +64,7 @@ export const itemsCat = async (req, res) =>{
 //filtrar items por descripcion
 export const itemsDescription = async (req, res) => {
     const pool= await getConection()
-    const {itemDescription}  = req.body;
+    var itemDescription = req.query.itemDescription;
     console.log(itemDescription);
     if (itemDescription==null){
         const result= await pool.request()

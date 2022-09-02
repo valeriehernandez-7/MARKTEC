@@ -6,8 +6,6 @@ export const login = async (req, res) => {
     //const {username, password} = req.body; 
     var username = req.query.usuario;
     var password = req.query.pass;
-    console.log("req.body")
-    console.log(username, password) 
     if (username==null || password==null){
         console.log("bad data")
     } 
