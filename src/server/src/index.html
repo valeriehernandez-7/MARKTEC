@@ -18,6 +18,8 @@
 	<link rel="stylesheet" type="text/css" href="css/daterangepicker/daterangepicker.css">
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="js/logScript.js"></script>
 </head>
 <body>
 	<!-- navbar -->
@@ -42,18 +44,18 @@
 						<h1><br>WELCOME</h1>
 					</span>
 					<!-- username input -->
-					<div class="wrap-input100 validate-input m-b-16" data-validate = "Username is required">
+					<div class="wrap-input100 validate-input m-b-16" data-validate = "Username is required" id="usuario">
 						<input class="input100" type="text" name="username" placeholder="USERNAME">
 						<span class="focus-input100"></span>
 					</div>
 					<!-- password input -->
-					<div class="wrap-input100 validate-input m-b-16" data-validate = "Password is required">
+					<div class="wrap-input100 validate-input m-b-16" data-validate = "Password is required" id="contrasena">
 						<input class="input100" type="password" name="pass" placeholder="PASSWORD">
 						<span class="focus-input100"></span>
 					</div>
 					<!-- log in button -->
 					<div class="container-login100-form-btn m-t-17">
-						<button class="login100-form-btn">
+						<button class="login100-form-btn" id="logBtn">
 							LOG IN
 						</button>
 					</div>
