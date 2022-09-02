@@ -17,7 +17,7 @@ BEGIN
 				BEGIN
 					SELECT
 						[I].[ID],
-						(SELECT [IC].[Name] FROM [dbo].[ItemCategory] AS [IC] WHERE [IC].[ID] = [I].[IDItemCategory]),
+						(SELECT [IC].[Name] FROM [dbo].[ItemCategory] AS [IC] WHERE [IC].[ID] = [I].[IDItemCategory]) AS [Category],
 						[I].[Description],
 						[I].[Price]
 					FROM [dbo].[Item] AS [I]
@@ -27,7 +27,7 @@ BEGIN
 				BEGIN
 					SELECT
 						[I].[ID],
-						(SELECT [IC].[Name] FROM [dbo].[ItemCategory] AS [IC] WHERE [IC].[ID] = [I].[IDItemCategory]),
+						(SELECT [IC].[Name] FROM [dbo].[ItemCategory] AS [IC] WHERE [IC].[ID] = [I].[IDItemCategory]) AS [Category],
 						[I].[Description],
 						[I].[Price]
 					FROM [dbo].[Item] AS [I]
