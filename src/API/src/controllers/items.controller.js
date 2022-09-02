@@ -3,15 +3,14 @@ const sql = require('mssql')
 import { request } from 'express';
 import {getConection} from '../database/conection';
 
+
 export const getItems = async (req,res) => {
     const pool= await getConection()
     const result= await pool.request().query("Select * from item");
-    console.log(result);    
-    res.json(result);
+    console.log(req.query);    
+    res.json(result.recordset);
 }
 
-
-//exect sp
 
 //filtrar items por cantidad
 export const itemAmount=  async (req, res) => {
@@ -82,13 +81,18 @@ export const itemsDescription = async (req, res) => {
     };    
 }
 
-export const itemInsert = (req,res) => {
+
+//insersion de items 
+export const itemInsert = async (req,res) => {
+    const pool= await getConection()
     const {category,description,price}  = req.body;
-    if (category == null ){
-        console.log ("aaaaa");   
-    }else{
-        console.log (category, description, price);   
-    }
+    const result= await pool.request()
+                    .input('inCategoryName', sql.NVARCHAR(64),category)
+                    .input('inDescription', sql.NVARCHAR(128),description)
+                    .input('inPrice', sql.Money,nupricell,price).
+                    output('outResultCode', sql.Int).
+                    execute('SP_ItemInsert');
+    res.json(result.output.outResultCode)
     
 }
 

@@ -18,9 +18,7 @@ router.get('/itemsAmount',itemAmount)
 
 router.get('/itemsCategory',itemsCategory)
 
-router.get('/itemsCat',itemsCat) 
-
-router.get('/itemsCategoryName',getItems)  
+router.get('/itemsCat',itemsCat)   
 
 router.get('/itemsDescription',itemsDescription)
 
