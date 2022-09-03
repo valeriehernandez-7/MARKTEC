@@ -25,7 +25,7 @@ function login() {
   fetch(url, options).then(response => response.json())
     .then(response => {
       if (response == 5200){
-          location.replace('/pagina/principal.html?user='+user);
+          location.replace('./principal.html?user='+user);
       }else{
         window.alert("Usuario o contraseña invalidos");
         return

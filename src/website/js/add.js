@@ -53,24 +53,24 @@ async function add() {
     body: JSON.stringify(body),
     headers: {"Content-Type": "application/json"},
     };
-    // Petición HTTP
-    //fetch(url, options).then(response => response.json())
-    //.then(response => {
-    //    console.log(response);
-    //    if(response == 5406){
-    //      window.alert("Este item ya existe");
-    //      return
-    //    }
-    //    if(response == 5200){
-    //      window.alert("Item ingresado con exito");
-    //      return
-    //    }else {
-    //        window.alert("Ocurrio un error al ingresar el dato");
-    //      }
-    //  }
-    //  ).catch(e => {
-    //    console.log(e);
-    //  });
+     Petición HTTP
+    fetch(url, options).then(response => response.json())
+    .then(response => {
+        console.log(response);
+        if(response == 5406){
+          window.alert("Este item ya existe");
+          return
+        }
+        if(response == 5200){
+          window.alert("Item ingresado con exito");
+          return
+        }else {
+            window.alert("Ocurrio un error al ingresar el dato");
+          }
+      }
+      ).catch(e => {
+        console.log(e);
+      });
     } catch (error) {
       console.error(error);
     }
@@ -84,5 +84,5 @@ async function add() {
 //funcion para volver a la pagina principal
 function ret() {
   var user = (new URL(location.href)).searchParams.get('user')
-  location.replace('file:///D:/Tec/S%202%202022/bases/t1/MARKTEC/src/pagina/principal.html?user='+user);
+  location.replace(' ./principal.html?user='+user);
 }

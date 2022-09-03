@@ -113,8 +113,8 @@ function cant() {
 
 function add() {
   var user = (new URL(location.href)).searchParams.get('user')
-  location.replace('file:///D:/Tec/S%202%202022/bases/t1/MARKTEC/src/pagina/insertItem.html?user='+user);
+  location.replace(' ./insertItem.html?user='+user);
 }
 function cerrar() {
-  location.replace('file:///D:/Tec/S%202%202022/bases/t1/MARKTEC/src/pagina/index.html');
+  location.replace(' ./index.html');
 }
