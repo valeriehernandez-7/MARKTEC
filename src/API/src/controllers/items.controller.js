@@ -85,12 +85,14 @@ export const itemsDescription = async (req, res) => {
 export const itemInsert = async (req,res) => {
     const pool= await getConection()
     //aconsole.log(req)
-    const {category,description,price,ip}  = req.body;
-    console.log(category, description, price, ip);
+    const {category,description,price,ip,user}  = req.body;
+    //console.log(category, description, price, ip,user);
     const result= await pool.request()
                     .input('inCategoryName', sql.NVARCHAR(64),category)
                     .input('inDescription', sql.NVARCHAR(128),description)
                     .input('inPrice', sql.Money,price).
+                    input('inUsername', sql.NVARCHAR(32),user).
+                    input('inUserIP', sql.NVARCHAR(64),ip).
                     output('outResultCode', sql.Int).
                     execute('SP_ItemInsert');
     res.json(result.output.outResultCode)

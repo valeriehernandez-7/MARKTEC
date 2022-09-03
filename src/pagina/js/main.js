@@ -7,7 +7,6 @@ $(document).ready(function(){
     };
     fetch(url, options).then(response => response.json())
     .then(response => {
-      console.log(response);
       $("#tableBody > tbody").empty();
       for (var i = 0; i < response.length; i++) {
         $("#tablaItems ").append("<tr><td> "+response[i].ID +"</td><td>"+response[i].Description +" </td><td> "+response[i].Category +" </td><td> "+response[i].Price +" </td></tr>");
@@ -104,5 +103,9 @@ function cant() {
 }
 
 function add() {
-  location.replace('file:///D:/Tec/S%202%202022/bases/t1/MARKTEC/src/pagina/insertItem.html');
+  var user = (new URL(location.href)).searchParams.get('user')
+  location.replace('file:///D:/Tec/S%202%202022/bases/t1/MARKTEC/src/pagina/insertItem.html?user='+user);
+}
+function cerrar() {
+  location.replace('file:///D:/Tec/S%202%202022/bases/t1/MARKTEC/src/pagina/index.html');
 }

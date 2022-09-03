@@ -32,11 +32,17 @@ async function add() {
     var category = $("#categorias").val()
     var price = $("#price").val();
     var desc = $("#descrip").val();
+    var user = (new URL(location.href)).searchParams.get('user')
     const body={
         category: category,
         description: desc,
         price:price,
         ip: response.data.ip,
+        user: user,
+    }
+    if(desc.includes(";") ){
+      window.alert("No debe incluir ;");
+      return;
     }
     if(category=="Categoria" || price=="" || desc == ""){
         window.alert("Debe rellenar todos los campos");
@@ -48,29 +54,26 @@ async function add() {
     headers: {"Content-Type": "application/json"},
     };
     // Petición HTTP
-    fetch(url, options).then(response => response.json())
-    .then(response => {
-      console.log(response);
-      if(response == 5406){
-        window.alert("Este item ya existe");
-        return
-      }
-      if(response == 5200){
-        window.alert("Item ingresado con exito");
-        return
-      }else {
-          window.alert("Ocurrio un error al ingresar el dato");
-      }
-
-
-
-      }
-    ).catch(e => {
-      console.log(e);
-  });
-  } catch (error) {
-    console.error(error);
-  }
+    //fetch(url, options).then(response => response.json())
+    //.then(response => {
+    //    console.log(response);
+    //    if(response == 5406){
+    //      window.alert("Este item ya existe");
+    //      return
+    //    }
+    //    if(response == 5200){
+    //      window.alert("Item ingresado con exito");
+    //      return
+    //    }else {
+    //        window.alert("Ocurrio un error al ingresar el dato");
+    //      }
+    //  }
+    //  ).catch(e => {
+    //    console.log(e);
+    //  });
+    } catch (error) {
+      console.error(error);
+    }
 }
 
 
@@ -80,5 +83,6 @@ async function add() {
 
 //funcion para volver a la pagina principal
 function ret() {
-  location.replace('file:///D:/Tec/S%202%202022/bases/t1/MARKTEC/src/pagina/principal.html');
+  var user = (new URL(location.href)).searchParams.get('user')
+  location.replace('file:///D:/Tec/S%202%202022/bases/t1/MARKTEC/src/pagina/principal.html?user='+user);
 }
