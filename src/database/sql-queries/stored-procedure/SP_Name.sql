@@ -2,7 +2,13 @@
 USE [MARKTEC]
 GO
 
-/* PROC DESCRIPTION */
+/* 
+	@proc_name
+	@proc_description
+	@proc_param
+	@author <a href="https://github.com/valeriehernandez-7">Valerie M. Hernández Fernández</a>
+	@author <a href="https://github.com/efmz200">Erick F. Madrigal Zavala</a>
+*/
 CREATE OR ALTER PROCEDURE [SP_Name]
 	/* SP Parameters */
 	-- @inVariable TYPE,
