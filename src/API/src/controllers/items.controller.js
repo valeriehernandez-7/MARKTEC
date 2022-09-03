@@ -9,7 +9,6 @@ import {getConection} from '../database/conection';
 //no se utiliza 
 export const getItems = async (req,res) => {
     const pool= await getConection()
-    console.log(req.ip);  
     const result= await pool.request().query("Select * from item");    
     res.json(result.recordset);
 }
@@ -19,7 +18,6 @@ export const getItems = async (req,res) => {
 export const itemAmount=  async (req, res) => {
     const pool= await getConection()
     var itemAmount = req.query.itemAmount;
-    console.log();
     if (itemAmount==null){
         const result= await pool.request()
                     .input('inAmount', sql.Int,null).
@@ -39,7 +37,6 @@ export const itemAmount=  async (req, res) => {
 export const itemsCategory = async (req, res) => {
     const pool= await getConection()
     var itemCategoryName = req.query.itemCategoryName;
-    console.log(itemCategoryName);
     if (itemCategoryName==null){
         const result= await pool.request()
                     .input('inCategoryName', sql.NVARCHAR(64),null).
@@ -68,7 +65,6 @@ export const itemsCat = async (req, res) =>{
 export const itemsDescription = async (req, res) => {
     const pool= await getConection()
     var itemDescription = req.query.itemDescription;
-    console.log(itemDescription);
     if (itemDescription==null){
         const result= await pool.request()
                     .input('inDescription', sql.NVARCHAR(128),null).
