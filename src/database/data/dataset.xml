@@ -2,6 +2,7 @@
 <Datos>
   <!-- dbo.User Data -->
   <Usuarios>
+    <Usuario Nombre="Admin" Password="0123" />
     <Usuario Nombre="JVasquez" Password="Bi30G2" />
     <Usuario Nombre="AChavez" Password="7bM3z2" />
     <Usuario Nombre="PHidalgo" Password="0tt89D" />
