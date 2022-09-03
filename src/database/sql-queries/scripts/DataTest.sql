@@ -7,9 +7,6 @@ GO
 /* Display data from EventLog table */
 SELECT * FROM [dbo].[EventLog];
 GO
-/* Display data from EventType table */
-SELECT * FROM [dbo].[EventType];
-GO
 /* Display data from Item table */
 SELECT * FROM [dbo].[Item];
 GO
@@ -27,10 +24,6 @@ GO
 /*Deletes data from EventLog table and restart the Id counter */
 DELETE FROM [dbo].[EventLog];
 DBCC CHECKIDENT ('[dbo].[EventLog]', RESEED, 0) WITH NO_INFOMSGS;
-GO
-/*Deletes data from EventType table and restart the Id counter */
-DELETE FROM [dbo].[EventType];
-DBCC CHECKIDENT ('[dbo].[EventType]', RESEED, 0) WITH NO_INFOMSGS;
 GO
 /*Deletes data from Item table and restart the Id counter */
 DELETE FROM [dbo].[Item];
