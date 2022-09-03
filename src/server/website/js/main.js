@@ -37,7 +37,7 @@ $(document).ready(function(){
 // botón filtro categoria
 function catfil() {
   var category = $("#cat").val();
-  $("#cat").val("Categoria");
+  $("#cat").val("");
   $("#cant").val('');
   $("#desc").val('');
   var url = "http://localhost:8000/itemsCategory?"
@@ -74,7 +74,7 @@ function catfil() {
 
 function descfil() {
   var itemDescription = $("#desc").val();
-  $("#cat").val("Categoria");
+  $("#cat").val("");
   $("#cant").val('');
   $("#desc").val('');
   var url = "http://localhost:8000/itemsDescription?"
@@ -110,7 +110,7 @@ function descfil() {
 
 function cant() {
   var itemAmount = $("#cant").val();
-  $("#cat").val("Categoria");
+  $("#cat").val("");
   $("#cant").val('');
   $("#desc").val('');
   var url = "http://localhost:8000/itemsAmount?"
