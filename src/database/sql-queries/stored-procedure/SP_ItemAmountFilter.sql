@@ -2,9 +2,14 @@
 USE [MARKTEC]
 GO
 
-/* PROC DESCRIPTION */
+/* 
+	@proc_name SP_ItemAmountFilter
+	@proc_description Displays the number of items indicated by the amount parameter. If there is no amount parameter it shows all items in dbo.Item.
+	@proc_param inAmount Amount of items to display
+	@proc_param outResultCode Procedure return value
+	@author <a href="https://github.com/valeriehernandez-7">Valerie M. Hernández Fernández</a>
+*/
 CREATE OR ALTER PROCEDURE [SP_ItemAmountFilter]
-	/* SP Parameters */
 	@inAmount INT,
 	@outResultCode INT OUTPUT
 AS
@@ -13,21 +18,21 @@ BEGIN
 	BEGIN TRY
 		SET @outResultCode = 0; /* Unassigned code */
 		BEGIN TRANSACTION [SelectTopItems]
-			IF (@inAmount IS NULL OR @inAmount = 0)
+			IF (@inAmount IS NULL OR @inAmount = 0)  /* If there is no amount param, display all the items ordered by item description. */
 				BEGIN
 					SELECT
 						[I].[ID],
-						(SELECT [IC].[Name] FROM [dbo].[ItemCategory] AS [IC] WHERE [IC].[ID] = [I].[IDItemCategory]),
+						(SELECT [IC].[Name] FROM [dbo].[ItemCategory] AS [IC] WHERE [IC].[ID] = [I].[IDItemCategory]) AS [Category],
 						[I].[Description],
 						[I].[Price]
 					FROM [dbo].[Item] AS [I]
 					ORDER BY [I].[Description];
 				END;
-			ELSE
+			ELSE /* If there is a amount param, displays the first @inAmount items sorted by item description param. */
 				BEGIN
 					SELECT TOP (@inAmount)
 						[I].[ID],
-						(SELECT [IC].[Name] FROM [dbo].[ItemCategory] AS [IC] WHERE [IC].[ID] = [I].[IDItemCategory]),
+						(SELECT [IC].[Name] FROM [dbo].[ItemCategory] AS [IC] WHERE [IC].[ID] = [I].[IDItemCategory]) AS [Category],
 						[I].[Description],
 						[I].[Price]
 					FROM [dbo].[Item] AS [I]

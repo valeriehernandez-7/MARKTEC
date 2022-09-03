@@ -2,9 +2,13 @@
 USE [MARKTEC]
 GO
 
-/* PROC DESCRIPTION */
+/* 
+	@proc_name SP_ItemCategoryNameFilter
+	@proc_description Displays all the item categories sort by the category name.
+	@proc_param outResultCode Procedure return value
+	@author <a href="https://github.com/valeriehernandez-7">Valerie M. Hernández Fernández</a>
+*/
 CREATE OR ALTER PROCEDURE [SP_ItemCategoryNameFilter]
-	/* SP Parameters */
 	@outResultCode INT OUTPUT
 AS
 BEGIN

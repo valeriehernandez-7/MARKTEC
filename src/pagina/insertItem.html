@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="UTF-8">
+        <title>MARKTEC add</title>
+        <link rel="stylesheet" href="css/add.css">
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="js/add.js"></script>
+    </head>
+    <body>
+        <section class= "form-login">
+            <h5>Añadir item</h5>
+            <input class="controls" type="text" id="descrip" value="" placeholder="Descripcion">
+            <input class="controls" type="number" id="price" value="" placeholder="Precio">
+            <select class="controls" name="categorias" id="categorias">
+               <option value="Categoria">Categoria</option>
+            </select>
+            <input class="buttons" type="submit" id="addBtn" value="Agregar Articulo" onclick="add();">
+            <input class="buttons" type="submit" id="backBTN" value="Regresar" onclick="ret();">
+        </section>
+
+    </body>
+</html>
