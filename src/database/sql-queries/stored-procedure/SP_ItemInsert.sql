@@ -8,6 +8,8 @@ CREATE OR ALTER PROCEDURE [SP_ItemInsert]
 	@inCategoryName NVARCHAR(64),
 	@inDescription NVARCHAR(128),
 	@inPrice MONEY,
+	@inUsername NVARCHAR(32),
+	@inUserIP NVARCHAR(64),
 	@outResultCode INT OUTPUT
 AS
 BEGIN
@@ -17,7 +19,7 @@ BEGIN
 		IF NOT EXISTS (SELECT 1 FROM [dbo].[Item] AS [I] WHERE [I].[Description] = @inDescription)
 			BEGIN
 				BEGIN TRANSACTION [InsertItem]
-					INSERT INTO [dbo].[Item] (
+					INSERT INTO [dbo].[Item] ( /* Insert the new item at dbo.Item */
 						[IDItemCategory],
 						[Description],
 						[Price]
@@ -26,7 +28,23 @@ BEGIN
 						@inDescription,
 						@inPrice
 					);
-				SET @outResultCode = 5200; /* OK */
+					INSERT INTO [dbo].[EventLog] ( /* Insert the create event at dbo.EventLog */
+						[IDUser],
+						[UserIP],
+						[DateTime],
+						[Description]
+					) VALUES (
+						(SELECT [U].[ID] FROM [dbo].[User] AS [U] WHERE [U].[Username] = @inUsername),
+						@inUserIP,
+						DEFAULT, /* [DateTime] default is GETDATE() */
+						(SELECT CONCAT('TYPE : Create', ' || ', 'TABLE: [dbo].[Item]', ' || ','DATA: ',
+										'[Category]=', @inCategoryName, ' ',
+										'[Description]=', @inDescription, ' ',
+										'[Price]=', @inPrice
+									  )
+						)
+					);
+					SET @outResultCode = 5200; /* OK */
 				COMMIT TRANSACTION [InsertItem]
 			END;
 		ELSE
