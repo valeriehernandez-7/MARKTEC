@@ -1,4 +1,3 @@
-var cant_elementos;
 //;ista inicial
 $(document).ready(function(){
     var url = "http://localhost:8000/itemsCategory"
@@ -10,9 +9,8 @@ $(document).ready(function(){
     .then(response => {
       console.log(response);
       $("#tableBody > tbody").empty();
-      cant_elementos=response.length
       for (var i = 0; i < response.length; i++) {
-        $("#tablaItems ").append("<tr><td> "+response[i].ID +"</td><td>"+response[i].Description +" </td><td> "+response[i].ID +" </td><td> "+response[i].Price +" </td></tr>");
+        $("#tablaItems ").append("<tr><td> "+response[i].ID +"</td><td>"+response[i].Description +" </td><td> "+response[i].Category +" </td><td> "+response[i].Price +" </td></tr>");
       }
 
   }).catch(e => {
@@ -40,10 +38,10 @@ function catfil() {
   fetch(url, options).then(response => response.json())
   .then(response => {
     console.log(response);
-    $("#tablaItems > tbody").empty();
+    $("#tablaItems").empty();
     $("#tablaItems ").append("<tr><th>ID</th><th>Descripcion</th><th> Categoria</th><th>Precio</th></tr>");
     for (var i = 0; i < response.length; i++) {
-      $("#tablaItems ").append("<tr><td>"+response[i].ID +"</td><td>"+response[i].Description +"</td><td>"+response[i].ID +"</td><td>"+response[i].Price +"</td></tr>");
+      $("#tablaItems ").append("<tr><td>"+response[i].ID +"</td><td>"+response[i].Description +"</td><td>"+response[i].Category +"</td><td>"+response[i].Price +"</td></tr>");
     }
 }).catch(e => {
     console.log(e);
@@ -72,7 +70,7 @@ function descfil() {
     $("#tablaItems ").empty();
     $("#tablaItems").append("<tr><th>ID</th><th>Descripcion</th><th> Categoria</th><th>Precio</th></tr>");
     for (var i = 0; i < response.length; i++) {
-      $("#tablaItems").append("<tr><td>"+response[i].ID +"</td><td>"+response[i].Description +"</td><td>"+response[i].ID +"</td><td>"+response[i].Price +"</td></tr>");
+      $("#tablaItems").append("<tr><td>"+response[i].ID +"</td><td>"+response[i].Description +"</td><td>"+response[i].Category +"</td><td>"+response[i].Price +"</td></tr>");
     }
 }).catch(e => {
     console.log(e);
@@ -98,9 +96,13 @@ function cant() {
     $("#tablaItems ").empty();
     $("#tablaItems").append("<tr><th>ID</th><th>Descripcion</th><th> Categoria</th><th>Precio</th></tr>");
     for (var i = 0; i < response.length; i++) {
-      $("#tablaItems").append("<tr><td>"+response[i].ID +"</td><td>"+response[i].Description +"</td><td>"+response[i].ID +"</td><td>"+response[i].Price +"</td></tr>");
+      $("#tablaItems").append("<tr><td>"+response[i].ID +"</td><td>"+response[i].Description +"</td><td>"+response[i].Category +"</td><td>"+response[i].Price +"</td></tr>");
     }
 }).catch(e => {
     console.log(e);
 });
+}
+
+function add() {
+  location.replace('file:///D:/Tec/S%202%202022/bases/t1/MARKTEC/src/pagina/insertItem.html');
 }

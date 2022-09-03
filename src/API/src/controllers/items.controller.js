@@ -9,6 +9,7 @@ import {getConection} from '../database/conection';
 //no se utiliza 
 export const getItems = async (req,res) => {
     const pool= await getConection()
+    console.log(req.ip);  
     const result= await pool.request().query("Select * from item");    
     res.json(result.recordset);
 }
@@ -87,7 +88,9 @@ export const itemsDescription = async (req, res) => {
 //insersion de items 
 export const itemInsert = async (req,res) => {
     const pool= await getConection()
-    const {category,description,price}  = req.body;
+    //aconsole.log(req)
+    const {category,description,price,ip}  = req.body;
+    console.log(category, description, price, ip);
     const result= await pool.request()
                     .input('inCategoryName', sql.NVARCHAR(64),category)
                     .input('inDescription', sql.NVARCHAR(128),description)
