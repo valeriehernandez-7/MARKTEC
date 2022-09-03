@@ -3,16 +3,14 @@ const sql = require('mssql')
 import { request } from 'express';
 import {getConection} from '../database/conection';
 
-//solo prueba de conección
-//se debe eliminar
-//no olvidar borrar
-//no se utiliza 
 export const getItems = async (req,res) => {
     const pool= await getConection()
-    const result= await pool.request().query("Select * from item");    
+    const result= await pool.request()
+                    .input('inAmount', sql.Int,null).
+                    output('outResultCode', sql.Int).
+                    execute('SP_ItemAmountFilter');    
     res.json(result.recordset);
 }
-
 
 //filtrar items por cantidad
 export const itemAmount=  async (req, res) => {
@@ -96,8 +94,4 @@ export const itemInsert = async (req,res) => {
                     output('outResultCode', sql.Int).
                     execute('SP_ItemInsert');
     res.json(result.output.outResultCode)
-    
 }
-
-
-
