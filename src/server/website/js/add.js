@@ -53,7 +53,7 @@ async function add() {
     body: JSON.stringify(body),
     headers: {"Content-Type": "application/json"},
     };
-     Petición HTTP
+    //Petición HTTP
     fetch(url, options).then(response => response.json())
     .then(response => {
         console.log(response);
