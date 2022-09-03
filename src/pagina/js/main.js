@@ -19,6 +19,9 @@ $(document).ready(function(){
 //boton filto categoria
 function catfil() {
   var category = $("#cat").val();
+  $("#cat").val('');
+  $("#cant").val('');
+  $("#desc").val('');
   var url = "http://localhost:8000/itemsCategory?"
   if (category != ""){
       url= url+new URLSearchParams({
@@ -48,6 +51,9 @@ function catfil() {
 }
 function descfil() {
   var itemDescription = $("#desc").val();
+  $("#cat").val('');
+  $("#cant").val('');
+  $("#desc").val('');
   var url = "http://localhost:8000/itemsDescription?"
   if (itemDescription != ""){
       url= url+new URLSearchParams({
@@ -78,6 +84,9 @@ function descfil() {
 
 function cant() {
   var itemAmount = $("#cant").val();
+  $("#cat").val('');
+  $("#cant").val('');
+  $("#desc").val('');
   var url = "http://localhost:8000/itemsAmount?"
   if (itemAmount != ""){
       url= url+new URLSearchParams({
