@@ -1,6 +1,6 @@
 body{
   font-family: arial;
-  background-image: url('../log_bg.jpg');
+  /* background-image: url('../log_bg.jpg'); */
 }
 *{
   margin:0;
@@ -8,9 +8,10 @@ body{
   box-sizing: border-box;
 }
 th, td {
+   padding: 10px;
    text-align: left;
    vertical-align: top;
-   border: 1px solid #000;
+   border: 1px solid #017bab;
    margin-left: 10px;
    background-color: #FFF
 }
@@ -39,7 +40,7 @@ th, td {
 }
 
 .buttons{
-  width: 150px;
+  width: 160px;
   height: 30px;
   background: #017bab;
   border: none;
