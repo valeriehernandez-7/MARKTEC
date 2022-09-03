@@ -9,8 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <script src="js/main.js"></script>
 </head>
-
-<body style="background-color: #b4c5cd;">
+<header class="container-fluid">
   <div class="row align-items-center" style="background-color: #017bab;">
     <div class="col-2">
       <input class="buttons" type="submit" id="githubBtn" value="MARKTEC" style="font-weight: bold;" onclick="window.location.href='https://github.com/valeriehernandez-7/MARKTEC';">
@@ -22,9 +21,11 @@
       <input class="buttons" type="submit" id="logOutBtn" value="SALIR" style="font-weight: bold;" onclick="cerrar();">
     </div>
   </div>
+</header>
+<body style="background-color: #b4c5cd;">
   <br><br><br>
   <div class="container-fluid" style="display: flex; justify-content: center;">
-    <section class="filt" style="padding-left: 1em;">
+    <section class="filt">
       <input class="controls" type="text" id="cat" value="" placeholder="CATEGORÍA">
       <input class="buttons" type="submit" id="catBtn" value="Filtrar por Categoría" onclick="catfil();">
     </section>
@@ -38,7 +39,7 @@
     </section>
   </div>
   <div class="container-fluid" style="display: flex; justify-content: center;">
-    <section style="padding-left: 1em;">
+    <section>
       <input class="buttons" type="submit" id="addBtn" value="Crear Artículo" onclick="add();">
     </section>
   </div>
