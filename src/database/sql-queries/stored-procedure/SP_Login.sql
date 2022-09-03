@@ -2,9 +2,15 @@
 USE [MARKTEC]
 GO
 
-/* PROC DESCRIPTION */
+/* 
+	@proc_name SP_Login
+	@proc_description Checks if the user and password received match any [dbo].[User] record and returns a code as appropriate.
+	@proc_param inUsername User's name
+	@proc_param inPassword User's password
+	@proc_param outResultCode Procedure return value
+	@author <a href="https://github.com/valeriehernandez-7">Valerie M. Hernández Fernández</a>
+*/
 CREATE OR ALTER PROCEDURE [SP_Login]
-	/* SP Parameters */
 	@inUsername NVARCHAR(32),
 	@inPassword NVARCHAR(32),
 	@outResultCode INT OUTPUT

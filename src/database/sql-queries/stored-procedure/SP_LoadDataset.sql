@@ -2,9 +2,16 @@
 USE [MARKTEC]
 GO
 
-/* PROC DESCRIPTION */
+/* 
+	@proc_name SP_LoadDataset
+	@proc_description It downloads the xml file with the data set to be loaded located in the bucket, 
+	reads the file and inserts the data in bulk into temporary tables and finally inserts the temporary data into the database tables.
+	@proc_param inS3ArnFile The S3 ARN of the file to download. If not specified, the file path is arn:aws:s3:::datasetbases1/dataset.xml
+	@proc_param inRDSFilePath The file path for the RDS instance. If not specified, the file path is D:\S3\dataset.xml
+	@proc_param outResultCode Procedure return value
+	@author <a href="https://github.com/valeriehernandez-7">Valerie M. Hernández Fernández</a>
+*/
 CREATE OR ALTER PROCEDURE [SP_LoadDataset]
-	/* SP Parameters */
 	@inS3ArnFile NVARCHAR(2048),
 	@inRDSFilePath NVARCHAR(2048),
 	@outResultCode INT OUTPUT

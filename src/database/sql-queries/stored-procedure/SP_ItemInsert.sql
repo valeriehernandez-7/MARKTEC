@@ -2,9 +2,19 @@
 USE [MARKTEC]
 GO
 
-/* PROC DESCRIPTION */
+/* 
+	@proc_name SP_ItemInsert
+	@proc_description Inserts a new item in dbo.Item. It verifies that there is not an item with the entered information, 
+	in case there is not, it performs the insertion of the item and creates the insertion event in dbo.EventLog.
+	@proc_param inCategoryName New item's category name
+	@proc_param inDescription New item's name / description
+	@proc_param inPrice New item's price
+	@proc_param inUsername New event's author / logged user
+	@proc_param inUserIP New event's author IP / logged user IP
+	@proc_param outResultCode Procedure return value
+	@author <a href="https://github.com/valeriehernandez-7">Valerie M. Hernández Fernández</a>
+*/
 CREATE OR ALTER PROCEDURE [SP_ItemInsert]
-	/* SP Parameters */
 	@inCategoryName NVARCHAR(64),
 	@inDescription NVARCHAR(128),
 	@inPrice MONEY,
