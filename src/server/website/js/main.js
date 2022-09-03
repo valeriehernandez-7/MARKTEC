@@ -1,4 +1,4 @@
-//;ista inicial
+// listado inicial
 $(document).ready(function(){
     var url = "http://localhost:8000/itemsCategory"
     const options = {
@@ -33,7 +33,8 @@ $(document).ready(function(){
     console.log(e);
 });
 })
-//boton filto categoria
+
+// botón filtro categoria
 function catfil() {
   var category = $("#cat").val();
   $("#cat").val("Categoria");
@@ -53,7 +54,7 @@ function catfil() {
   method: "get",
   headers: {"Content-Type": "application/json"},
   };
-  // Petición HTTP
+  // petición HTTP
   fetch(url, options).then(response => response.json())
   .then(response => {
     console.log(response);
@@ -70,6 +71,7 @@ function catfil() {
     console.log(e);
 });
 }
+
 function descfil() {
   var itemDescription = $("#desc").val();
   $("#cat").val("Categoria");
@@ -142,6 +144,7 @@ function add() {
   var user = (new URL(location.href)).searchParams.get('user')
   location.replace(' ./insertItem.html?user='+user);
 }
+
 function cerrar() {
   location.replace(' ./index.html');
 }

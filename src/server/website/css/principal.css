@@ -32,14 +32,13 @@ th, td {
 .controls{
   height: 30px;
   border: 1px solid #017bab;
-  margin-bottom: 8px;
-  padding: 11px 10px;
+  text-align: left;
+  align-content: middle;
+  padding-left: 5px;
+  padding-right: 5px;
   background: #FFF;
   font-size: 14px;
   font-weight: bold;
-}
-#catBtn{
-margin-top:0px;
 }
 .buttons{
   width: 160px;
