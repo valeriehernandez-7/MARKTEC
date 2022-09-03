@@ -15,11 +15,28 @@ $(document).ready(function(){
   }).catch(e => {
       console.log(e);
   });
+  var url = "http://localhost:8000/itemsCatFilter"
+  const $select = $("#cat")
+  fetch(url, options).then(response => response.json())
+  .then(response => {
+    console.log(response);
+
+    for (var i = 0; i < response.length; i++) {
+      valor=response[i].Name;
+      $select.append($("<option>", {
+        value: valor,
+        text: valor
+      }));
+    }
+
+}).catch(e => {
+    console.log(e);
+});
 })
 //boton filto categoria
 function catfil() {
   var category = $("#cat").val();
-  $("#cat").val('');
+  $("#cat").val("Categoria");
   $("#cant").val('');
   $("#desc").val('');
   var url = "http://localhost:8000/itemsCategory?"
@@ -41,7 +58,11 @@ function catfil() {
   .then(response => {
     console.log(response);
     $("#tablaItems").empty();
-    $("#tablaItems ").append("<tr><th>ID</th><th>Descripcion</th><th> Categoria</th><th>Precio</th></tr>");
+    style="text-align:center; color: #FFFFFF; background-color: #017bab; border: 2px solid #017bab;"
+    $("#tablaItems ").append("<tr><th style=\"text-align:center; color: #FFFFFF; background-color: #017bab; border: 2px solid #017bab;\">ID</th>"+
+                                  "<th style=\"text-align:center; color: #FFFFFF; background-color: #017bab; border: 2px solid #017bab;\">DESCRIPCIÓN</th>"+
+                                  "<th style=\"text-align:center; color: #FFFFFF; background-color: #017bab; border: 2px solid #017bab;\">CATEGORÍA</th>"+
+                                  "<th style=\"text-align:center; color: #FFFFFF; background-color: #017bab; border: 2px solid #017bab;\">PRECIO</th></tr>");
     for (var i = 0; i < response.length; i++) {
       $("#tablaItems ").append("<tr><td>"+response[i].ID +"</td><td>"+response[i].Description +"</td><td>"+response[i].Category +"</td><td>"+response[i].Price +"</td></tr>");
     }
@@ -51,7 +72,7 @@ function catfil() {
 }
 function descfil() {
   var itemDescription = $("#desc").val();
-  $("#cat").val('');
+  $("#cat").val("Categoria");
   $("#cant").val('');
   $("#desc").val('');
   var url = "http://localhost:8000/itemsDescription?"
@@ -73,7 +94,10 @@ function descfil() {
   .then(response => {
     console.log(response);
     $("#tablaItems ").empty();
-    $("#tablaItems").append("<tr><th>ID</th><th>Descripcion</th><th> Categoria</th><th>Precio</th></tr>");
+    $("#tablaItems ").append("<tr><th style=\"text-align:center; color: #FFFFFF; background-color: #017bab; border: 2px solid #017bab;\">ID</th>"+
+                                  "<th style=\"text-align:center; color: #FFFFFF; background-color: #017bab; border: 2px solid #017bab;\">DESCRIPCIÓN</th>"+
+                                  "<th style=\"text-align:center; color: #FFFFFF; background-color: #017bab; border: 2px solid #017bab;\">CATEGORÍA</th>"+
+                                  "<th style=\"text-align:center; color: #FFFFFF; background-color: #017bab; border: 2px solid #017bab;\">PRECIO</th></tr>");
     for (var i = 0; i < response.length; i++) {
       $("#tablaItems").append("<tr><td>"+response[i].ID +"</td><td>"+response[i].Description +"</td><td>"+response[i].Category +"</td><td>"+response[i].Price +"</td></tr>");
     }
@@ -84,7 +108,7 @@ function descfil() {
 
 function cant() {
   var itemAmount = $("#cant").val();
-  $("#cat").val('');
+  $("#cat").val("Categoria");
   $("#cant").val('');
   $("#desc").val('');
   var url = "http://localhost:8000/itemsAmount?"
@@ -102,7 +126,10 @@ function cant() {
   .then(response => {
     console.log(response);
     $("#tablaItems ").empty();
-    $("#tablaItems").append("<tr><th>ID</th><th>Descripcion</th><th> Categoria</th><th>Precio</th></tr>");
+    $("#tablaItems ").append("<tr><th style=\"text-align:center; color: #FFFFFF; background-color: #017bab; border: 2px solid #017bab;\">ID</th>"+
+                                  "<th style=\"text-align:center; color: #FFFFFF; background-color: #017bab; border: 2px solid #017bab;\">DESCRIPCIÓN</th>"+
+                                  "<th style=\"text-align:center; color: #FFFFFF; background-color: #017bab; border: 2px solid #017bab;\">CATEGORÍA</th>"+
+                                  "<th style=\"text-align:center; color: #FFFFFF; background-color: #017bab; border: 2px solid #017bab;\">PRECIO</th></tr>");
     for (var i = 0; i < response.length; i++) {
       $("#tablaItems").append("<tr><td>"+response[i].ID +"</td><td>"+response[i].Description +"</td><td>"+response[i].Category +"</td><td>"+response[i].Price +"</td></tr>");
     }

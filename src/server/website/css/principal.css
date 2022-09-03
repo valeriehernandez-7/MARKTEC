@@ -38,7 +38,9 @@ th, td {
   font-size: 14px;
   font-weight: bold;
 }
-
+#catBtn{
+margin-top:0px;
+}
 .buttons{
   width: 160px;
   height: 30px;

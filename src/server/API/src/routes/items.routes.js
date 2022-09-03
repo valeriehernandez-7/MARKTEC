@@ -1,6 +1,5 @@
 import {Router} from 'express'
 import {
-    getItems,
     itemsCategory,
     itemInsert,
     itemsDescription,
@@ -11,8 +10,6 @@ import {
 
 
 const router = Router()
-
-router.get('/items',getItems)
 
 router.get('/itemsAmount',itemAmount)
 
