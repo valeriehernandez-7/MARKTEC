@@ -22,6 +22,3 @@ export async function getConection(){
 }
 
 
-
-//const result = await pool.request().query("Select * from item")
-//console.log(result)

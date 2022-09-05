@@ -3,7 +3,6 @@ import {getConection} from '../database/conection';
 
 export const login = async (req, res) => {
     const pool= await getConection()
-    //const {username, password} = req.body; 
     var username = req.query.usuario;
     var password = req.query.pass;
     if (username==null || password==null){
