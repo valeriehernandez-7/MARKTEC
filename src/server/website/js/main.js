@@ -20,8 +20,11 @@ $(document).ready(function(){
   fetch(url, options).then(response => response.json())
   .then(response => {
     console.log(response);
-
-    for (var i = 0; i < response.length; i++) {
+    $select.append($("<option>", {
+      value: "",
+      text: response[0].Name
+    }));
+    for (var i = 1; i < response.length; i++) {
       valor=response[i].Name;
       $select.append($("<option>", {
         value: valor,
