@@ -15,18 +15,12 @@ BEGIN
 	SET NOCOUNT ON;
 	BEGIN TRY
 		SET @outResultCode = 0; /* Unassigned code */
-		BEGIN TRANSACTION [SelectItemCategories]
-			SELECT [IC].[Name]
-			FROM [dbo].[ItemCategory] AS [IC]
-			ORDER BY [IC].[Name];
-			SET @outResultCode = 5200; /* OK */
-		COMMIT TRANSACTION [SelectItemCategories]		
+		SELECT [IC].[Name]
+		FROM [dbo].[ItemCategory] AS [IC]
+		ORDER BY [IC].[Name];
+		SET @outResultCode = 5200; /* OK */	
 	END TRY
 	BEGIN CATCH
-		IF @@TRANCOUNT > 0
-			BEGIN
-				ROLLBACK TRANSACTION [SelectItemCategories]
-			END;
 		IF OBJECT_ID(N'dbo.ErrorLog', N'U') IS NOT NULL /* Check Error table existence */
 			BEGIN
 				/* Update Error table */

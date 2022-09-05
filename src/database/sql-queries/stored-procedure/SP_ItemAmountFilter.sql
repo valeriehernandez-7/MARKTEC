@@ -17,35 +17,29 @@ BEGIN
 	SET NOCOUNT ON;
 	BEGIN TRY
 		SET @outResultCode = 0; /* Unassigned code */
-		BEGIN TRANSACTION [SelectTopItems]
-			IF (@inAmount IS NULL OR @inAmount = 0)  /* If there is no amount param, display all the items ordered by item description. */
-				BEGIN
-					SELECT
-						[I].[ID],
-						(SELECT [IC].[Name] FROM [dbo].[ItemCategory] AS [IC] WHERE [IC].[ID] = [I].[IDItemCategory]) AS [Category],
-						[I].[Description],
-						[I].[Price]
-					FROM [dbo].[Item] AS [I]
-					ORDER BY [I].[Description];
-				END;
-			ELSE /* If there is a amount param, displays the first @inAmount items sorted by item description param. */
-				BEGIN
-					SELECT TOP (@inAmount)
-						[I].[ID],
-						(SELECT [IC].[Name] FROM [dbo].[ItemCategory] AS [IC] WHERE [IC].[ID] = [I].[IDItemCategory]) AS [Category],
-						[I].[Description],
-						[I].[Price]
-					FROM [dbo].[Item] AS [I]
-					ORDER BY [I].[Description];
-				END;
-			SET @outResultCode = 5200; /* OK */
-		COMMIT TRANSACTION [SelectTopItems]	
+		IF (@inAmount IS NULL OR @inAmount = 0)  /* If there is no amount param, display all the items ordered by item description. */
+			BEGIN
+				SELECT
+					[I].[ID],
+					(SELECT [IC].[Name] FROM [dbo].[ItemCategory] AS [IC] WHERE [IC].[ID] = [I].[IDItemCategory]) AS [Category],
+					[I].[Description],
+					[I].[Price]
+				FROM [dbo].[Item] AS [I]
+				ORDER BY [I].[Description];
+			END;
+		ELSE /* If there is a amount param, displays the first @inAmount items sorted by item description param. */
+			BEGIN
+				SELECT TOP (@inAmount)
+					[I].[ID],
+					(SELECT [IC].[Name] FROM [dbo].[ItemCategory] AS [IC] WHERE [IC].[ID] = [I].[IDItemCategory]) AS [Category],
+					[I].[Description],
+					[I].[Price]
+				FROM [dbo].[Item] AS [I]
+				ORDER BY [I].[Description];
+			END;
+		SET @outResultCode = 5200; /* OK */	
 	END TRY
 	BEGIN CATCH
-		IF @@TRANCOUNT > 0
-			BEGIN
-				ROLLBACK TRANSACTION [SelectTopItems]
-			END;
 		IF OBJECT_ID(N'dbo.ErrorLog', N'U') IS NOT NULL /* Check Error table existence */
 			BEGIN
 				/* Update Error table */

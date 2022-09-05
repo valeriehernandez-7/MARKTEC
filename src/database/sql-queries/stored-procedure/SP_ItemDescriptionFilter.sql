@@ -17,36 +17,30 @@ BEGIN
 	SET NOCOUNT ON;
 	BEGIN TRY
 		SET @outResultCode = 0; /* Unassigned code */
-		BEGIN TRANSACTION [SelectItems]
-			IF (@inDescription IS NULL OR @inDescription = '') /* If there is no description param, display all the items ordered by item description. */
-				BEGIN
-					SELECT
-						[I].[ID],
-						(SELECT [IC].[Name] FROM [dbo].[ItemCategory] AS [IC] WHERE [IC].[ID] = [I].[IDItemCategory]) AS [Category],
-						[I].[Description],
-						[I].[Price]
-					FROM [dbo].[Item] AS [I]
-					ORDER BY [I].[Description];
-				END;
-			ELSE  /* If there is a description param, displays all items sorted by item description param where the description param matches the item description. */
-				BEGIN
-					SELECT
-						[I].[ID],
-						(SELECT [IC].[Name] FROM [dbo].[ItemCategory] AS [IC] WHERE [IC].[ID] = [I].[IDItemCategory]) AS [Category],
-						[I].[Description],
-						[I].[Price]
-					FROM [dbo].[Item] AS [I]
-					WHERE [I].[Description] LIKE '%'+ @inDescription + '%'
-					ORDER BY [I].[Description];
-				END;
-			SET @outResultCode = 5200; /* OK */
-		COMMIT TRANSACTION [SelectItems]	
+		IF (@inDescription IS NULL OR @inDescription = '') /* If there is no description param, display all the items ordered by item description. */
+			BEGIN
+				SELECT
+					[I].[ID],
+					(SELECT [IC].[Name] FROM [dbo].[ItemCategory] AS [IC] WHERE [IC].[ID] = [I].[IDItemCategory]) AS [Category],
+					[I].[Description],
+					[I].[Price]
+				FROM [dbo].[Item] AS [I]
+				ORDER BY [I].[Description];
+			END;
+		ELSE  /* If there is a description param, displays all items sorted by item description param where the description param matches the item description. */
+			BEGIN
+				SELECT
+					[I].[ID],
+					(SELECT [IC].[Name] FROM [dbo].[ItemCategory] AS [IC] WHERE [IC].[ID] = [I].[IDItemCategory]) AS [Category],
+					[I].[Description],
+					[I].[Price]
+				FROM [dbo].[Item] AS [I]
+				WHERE [I].[Description] LIKE '%'+ @inDescription + '%'
+				ORDER BY [I].[Description];
+			END;
+		SET @outResultCode = 5200; /* OK */
 	END TRY
 	BEGIN CATCH
-		IF @@TRANCOUNT > 0
-			BEGIN
-				ROLLBACK TRANSACTION [SelectItems]
-			END;
 		IF OBJECT_ID(N'dbo.ErrorLog', N'U') IS NOT NULL /* Check Error table existence */
 			BEGIN
 				/* Update Error table */
